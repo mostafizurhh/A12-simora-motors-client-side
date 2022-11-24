@@ -64,7 +64,7 @@ const Header = () => {
                 <img src={Logo} alt="" className='hidden md:block' style={{ height: 56, width: 56 }} />
                 <Link to='/' className="btn btn-ghost flex-col">
                     <p className='text-primary text-xl'>SIMORA</p>
-                    <p className='text-normal capitalize italic'>Motors</p>
+                    <p className='capitalize italic text-secondary'>Motors</p>
                 </Link>
             </div>
             <div className="navbar-end hidden md:flex">
