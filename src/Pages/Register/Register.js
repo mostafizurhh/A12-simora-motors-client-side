@@ -5,11 +5,12 @@ import toast from 'react-hot-toast';
 import { GoogleAuthProvider } from 'firebase/auth';
 import google from '../../assets/icons/Google.png'
 import { AuthContext } from '../../Contexts/AuthContext/AuthProvider';
+import { useToken } from '../../Hooks/useToken/useToken';
 
 const Register = () => {
     const [error, setError] = useState();
 
-    const { createUser, providerLogin, verifyEmail, updateUserInfo } = useContext(AuthContext)
+    const { createUser, providerLogin, updateUserInfo } = useContext(AuthContext)
 
     /*--------------
     navigate user 
@@ -20,12 +21,12 @@ const Register = () => {
     /*-------------------------------------------------*/
 
     /* get JWT token for a registered user*/
-    // const [createdUserEmail, setCreatedUserEmail] = useState('')
-    // const [token] = useToken(createdUserEmail)
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
+    const [token] = useToken(createdUserEmail)
 
-    // if (token) {
-    //     navigate(from, { replace: true })
-    // }
+    if (token) {
+        navigate(from, { replace: true })
+    }
 
 
     const handleFormSubmit = event => {
@@ -36,6 +37,7 @@ const Register = () => {
         const photoURL = event.target.photoURL.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
+        const userCategory = event.target.userCategory.value;
 
         if (!/(?=.*[a-z])/.test(password)) {
             setError('Please provide at least 1 lowercase letter')
@@ -62,12 +64,10 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                handleUpdateUserInfo(userName, photoURL, email, userCategory)
+                toast.success('Registration Successful!', { duration: 3000 })
                 setError('')
                 event.target.reset()
-                // handleEmailVerification()
-                handleUpdateUserInfo(userName, photoURL, email)
-                navigate(from, { replace: true })
-                toast.success('Registration Successful!', { duration: 3000 })
             })
             .catch(error => {
                 console.error(error)
@@ -75,54 +75,38 @@ const Register = () => {
             })
     }
 
-    // const handleEmailVerification = () => {
-    //     verifyEmail()
-    //         .then(() => { })
-    //         .catch(e => console.error(e))
-    // }
-
-    const handleUpdateUserInfo = (userName, photoURL, email) => {
+    const handleUpdateUserInfo = (userName, photoURL, email, userCategory) => {
         const info = {
             displayName: userName,
             photoURL: photoURL,
-            email: email
+            email: email,
+            userCategory
         }
         updateUserInfo(info)
             .then(() => {
                 console.log(info)
-                // saveUserInfo(userName, email)
+                saveUserInfo(userName, email, userCategory, photoURL)
             })
             .catch(e => console.error(e))
     }
 
     /* request server side to create an API */
-    // const saveUserInfo = (userName, email) => {
-    //     const dbUser = { name: userName, email };
-    //     fetch('https://simora-server-mostafizurhh.vercel.app/users', {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(dbUser)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //             setCreatedUserEmail(email)
-    //         })
-    // }
+    const saveUserInfo = (userName, email, userCategory, photoURL) => {
+        const dbUser = { name: userName, email, userCategory, photoURL };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(dbUser)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setCreatedUserEmail(email)
+            })
+    }
 
-    /* get JWT api from server */
-    // const getUserToken = email => {
-    //     fetch(`https://simora-server-mostafizurhh.vercel.app/jwt?email=${email}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.accessToken) {
-    //                 localStorage.setItem('accessToken', data.accessToken);
-    //                 navigate(from, { replace: true })
-    //             }
-    //         })
-    // }
 
     const googleProvider = new GoogleAuthProvider()
 
@@ -172,6 +156,16 @@ const Register = () => {
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                         </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">User Category</span>
+                            </label>
+                            <select name="userCategory" className="input input-bordered">
+                                <option>Buyer</option>
+                                <option>Seller</option>
+                            </select>
+                        </div>
+
                         <div className='mt-3 text-red-700'>
                             {error}
                         </div>

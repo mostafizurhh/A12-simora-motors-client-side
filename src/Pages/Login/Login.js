@@ -4,14 +4,15 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { GoogleAuthProvider } from 'firebase/auth';
 import google from '../../assets/icons/Google.png'
 import { AuthContext } from '../../Contexts/AuthContext/AuthProvider';
+import { useToken } from '../../Hooks/useToken/useToken';
 
 const Login = () => {
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
     const { loginWithEmail, providerLogin, passwordReset, setLoading } = useContext(AuthContext);
 
-    // const [loggedinUserEmail, setLoggedinUserEmail] = useState('');
-    // const [token] = useToken(loggedinUserEmail);
+    const [loggedinUserEmail, setLoggedinUserEmail] = useState('');
+    const [token] = useToken(loggedinUserEmail);
 
     /*--------------
      navigate user 
@@ -21,9 +22,9 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/'
     /*-------------------------------------------------*/
 
-    // if (token) {
-    //     navigate(from, { replace: true })/* navigate user */
-    // }
+    if (token) {
+        navigate(from, { replace: true })/* navigate user */
+    }
     const handleFormSubmit = event => {
         event.preventDefault()
         const form = event.target;
@@ -34,9 +35,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
-                // setLoggedinUserEmail(email)
+                setLoggedinUserEmail(email)
                 setError('')
-                navigate(from, { replace: true })
                 form.reset()
                 /* restrict user to navigate unless email verification */
                 /* if (user.emailVerified) {
@@ -62,7 +62,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 navigate(from, { replace: true })
-                // setLoggedinUserEmail(user.email)
+                setLoggedinUserEmail(user.email)
                 setError('')
             })
             .catch(e => console.error(e))
