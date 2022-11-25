@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Logo from './logo.png'
+import Logo from '../../../assets/images/logo.png'
 import { AuthContext } from '../../../Contexts/AuthContext/AuthProvider';
 
 const Header = () => {
@@ -51,7 +51,7 @@ const Header = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100 p-0 mt-5 sticky top-1">
+        <div className="navbar bg-base-100 p-0 mt-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className=" md:hidden">

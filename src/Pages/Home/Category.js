@@ -12,7 +12,7 @@ const Category = ({ category }) => {
                 <p>{(description.slice(0, 120) + '...')}</p>
                 <div className="card-actions justify-end">
                     <Link to={`/categorydetails/${categoryId}`}>
-                        <button className="btn btn-primary">Explore</button>
+                        <button className="btn btn-primary hover:bg-secondary text-white">Explore</button>
                     </Link>
                 </div>
             </div>
