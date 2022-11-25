@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './Contexts/AuthContext/AuthProvider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { PhotoProvider } from 'react-photo-view';
 
 const queryClient = new QueryClient()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
+      <PhotoProvider>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </PhotoProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );
