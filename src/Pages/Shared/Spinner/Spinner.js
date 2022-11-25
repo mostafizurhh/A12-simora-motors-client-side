@@ -4,7 +4,7 @@ import { Dna } from 'react-loader-spinner';
 
 const Spinner = () => {
     return (
-        <div className='flex, items-center justify-center'>
+        <div className='text-center'>
             <Dna
                 visible={true}
                 height="80"

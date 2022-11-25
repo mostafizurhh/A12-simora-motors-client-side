@@ -5,7 +5,7 @@ import Brands from './Brands';
 import Contact from './Contact';
 import Financing from './Financing';
 import Info from './Info';
-import ProductCategories from './ProductCategories';
+import ProductCategories from '../AllCategory/ProductCategories';
 
 
 const Home = () => {

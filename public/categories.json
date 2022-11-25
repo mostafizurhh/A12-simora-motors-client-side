@@ -6,7 +6,7 @@
         "description": "Diesel engines are highly efficient and are more durable with their engine setup. Diesels provide you with more torque when driving. A diesel car has a better resale value as its fuel quality has improved dramatically over the past 20 years. Moreover, You can burn more than one type of fuel in diesel cars and some diesel engines can operate quietly.",
         "products": [
             {
-                "categoryId": 1,
+                "productId": 1,
                 "name": "Opel Corsa 1.3 CDTi Business Edition",
                 "image": "https://www.helcar.com/wp-content/uploads/2022/03/WhatsApp-Image-2022-05-04-at-11.09.51.jpeg",
                 "resale": 9500,
@@ -20,7 +20,7 @@
                 "location": "CT, USA"
             },
             {
-                "categoryId": 1,
+                "productId": 2,
                 "name": "BMW 118 D",
                 "image": "https://img.ebay-kleinanzeigen.de/api/v1/prod-ads/images/8c/8cdc7bb4-107b-419b-9442-f3c3cc752aaf?rule=$_59.JPG",
                 "resale": 13500,
@@ -34,7 +34,7 @@
                 "location": "NY, USA"
             },
             {
-                "categoryId": 1,
+                "productId": 3,
                 "name": "Renault Clio 1.5 DCi Zen",
                 "image": "https://images-automais.autosport.pt/2018/11/Renault-Clio-2017-Red-5.jpg",
                 "resale": 10500,
@@ -48,7 +48,7 @@
                 "location": "MT, USA"
             },
             {
-                "categoryId": 1,
+                "productId": 4,
                 "name": "Fiat Tipo 1.3 M-Jet Lounge",
                 "image": "https://images-automais.autosport.pt/2018/10/Fiat-Tipo-5P-2017-14.jpg",
                 "resale": 12500,
@@ -70,7 +70,7 @@
         "description": "Petrol cars cost less than their diesel counterparts. Many more make and models are available in petrol version, especially in hatchback body type. The petrol engines are considered more responsive and powerful than diesel engines. The engine noise of petrol cars is much lesser than diesel cars. The maintenance cost of a petrol engine is usually lower than the diesel cars of the same make and model. The petrol vehicles deal better with demanding climate conditions such as extreme cold",
         "products": [
             {
-                "categoryId": 2,
+                "productId": 5,
                 "name": "Renault Captur 1.0 TCe Exclusive",
                 "image": "https://images.drive.com.au/image/upload/v1646561741/cms/uploads/cuhznk1fgeo79zgar786",
                 "resale": 15500,
@@ -84,7 +84,7 @@
                 "location": "CT, USA"
             },
             {
-                "categoryId": 2,
+                "productId": 6,
                 "name": "Renault Twingo 1.0 SCe Limited",
                 "image": "https://www.carscoops.com/wp-content/uploads/2019/01/6b3ef032-2019-renault-twingo-le-coq-sportif-edition-0.jpg",
                 "resale": 11100,
@@ -98,7 +98,7 @@
                 "location": "LS, USA"
             },
             {
-                "categoryId": 2,
+                "productId": 7,
                 "name": "Fiat Panda 1.2 Easy S&S",
                 "image": "https://wikiimg.tojsiabtv.com/wikipedia/commons/thumb/1/12/Fiat_Panda_in_Mechelen_NL.jpg/1200px-Fiat_Panda_in_Mechelen_NL.jpg",
                 "resale": 9900,
@@ -112,7 +112,7 @@
                 "location": "PT, USA"
             },
             {
-                "categoryId": 2,
+                "productId": 8,
                 "name": "Mitsubishi Space Star",
                 "image": "https://www.tveuropa.pt/cnt/uploads/F19AU040.jpg",
                 "resale": 10100,
@@ -134,7 +134,7 @@
         "description": "Driving on LPG instead of petrol or diesel, CO2 emissions lower about 10%. Also, LPG releases 55% less NOx (nitrogen oxide) than petrol and 96% less than diesel, as well as 8% less particulate matter than petrol and 11% less than diesel. The LPG System, original equipped or installed aftermarket, allows you to save a lot. How much does 1 litre of LPG cost? One of the biggest advantages is fuel cost, for sure; it costs 60% less than petrol. A road tax reduction is granted in case of purchase of a bi-fuel car or conversion of a petrol car, according to your residence. LPG systems are more and more safe and efficient, so that vehicle performances basically don’t change after converting it. In many cities, an LPG car can move freely in traffic restriction areas too.",
         "products": [
             {
-                "categoryId": 3,
+                "productId": 9,
                 "name": "Fiat Punto",
                 "image": "https://www.leaseplan.com/-/media/leaseplan-digital/pt/business-lease-and-private-lease/spotlight-pages/48_fiat-punto/fiat-punto-2012-1280-02.jpg?rev=-1",
                 "resale": 10770,
@@ -148,7 +148,7 @@
                 "location": "LZ, USA"
             },
             {
-                "categoryId": 3,
+                "productId": 10,
                 "name": "Renault Clio 0.9 TCe Limited Bi-Fuel",
                 "image": "https://auto8.imgs.sapo.pt/0898/00039898/v/0458/002434458/Original/Renault-Clio-147026660.jpg",
                 "resale": 12100,
@@ -162,7 +162,7 @@
                 "location": "AR, USA"
             },
             {
-                "categoryId": 3,
+                "productId": 11,
                 "name": "Dacia Sandero 1.0 ECO-G Essential Bi-Fuel",
                 "image": "https://media.autoweek.nl/m/ypryytjbatvk_800.jpg",
                 "resale": 14100,
@@ -176,7 +176,7 @@
                 "location": "AZ, USA"
             },
             {
-                "categoryId": 3,
+                "productId": 12,
                 "name": "SEAT Arona 1.0 TGI Style",
                 "image": "https://autoads.pt/storage/anuncios/8339/B8Q4vnBptMTfCzL3VrGLCLOqs77qmxmNRHiOf5mH.jpeg",
                 "resale": 15100,
@@ -198,7 +198,7 @@
         "description": "Hybrid car has Greater Fuel Efficiency because it doesn't solely rely on their gas engine to run, less fuel may be needed to propel a hybrid vehicle. The effect — improved fuel efficiency. Hybrids have better fuel efficiency and conserve more energy, thus emitting fewer carbon emissions. Since hybrid vehicles are able to utilize the high voltage battery pack and electric motor(s) for propulsion, they don't rely on fossil fuels as much as standard gas cars. When you apply the brakes while driving most hybrid vehicles, energy is produced and used to recharge your high voltage battery. This action can result in less fuel consumption.",
         "products": [
             {
-                "categoryId": 4,
+                "productId": 13,
                 "name": "Toyota Auris 1.8 HSD Comfort",
                 "image": "https://auto8.imgs.sapo.pt/0441/00204441/v/0584/002592584/Original/Toyota-Auris-174167789.jpg",
                 "resale": 16100,
@@ -212,7 +212,7 @@
                 "location": "CA, USA"
             },
             {
-                "categoryId": 4,
+                "productId": 14,
                 "name": "Hyundai Ioniq 1.6 GDI HEV Hybrid Tech",
                 "image": "https://fleetmagazine.pt/wp-content/uploads/2017/04/ensaio-hyundai-ioniq.jpg",
                 "resale": 17490,
@@ -226,7 +226,7 @@
                 "location": "PN, USA"
             },
             {
-                "categoryId": 4,
+                "productId": 15,
                 "name": "Audi A3 Sportback",
                 "image": "https://www.escapelivre.com/wp-content/uploads/2020/03/Audi-A3-Sportback-2020-1-scaled-e1583235516300.jpg",
                 "resale": 21900,
@@ -240,7 +240,7 @@
                 "location": "AT, USA"
             },
             {
-                "categoryId": 4,
+                "productId": 16,
                 "name": "Kia Niro 1.6 GDi HEV Tech",
                 "image": "https://www.motor24.pt/files/2021/11/Kia-Niro-2022-8.jpg",
                 "resale": 22900,
@@ -262,7 +262,7 @@
         "description": "Electric vehicles have many benefits, including: Cleaner environment, No congestion charge, Lower running costs, Renewable electricity tariffs, Better driving experience, Government funding, Free parking, Reduced noise pollution, Increased resale value. Paying $0.10 per kW is the equivalent of driving on gasoline that costs less than $1 per gallon. On average, drivers save about $700 in fuel costs per year while driving electric cars. Drivers of electric vehicles have reduced CO2 emissions by more than 177,758,804 kg. Electric motors have less parts that lead to less damage than a traditional non electric vehicle which means you save on operating cost! Electric cars are not only lighter but have faster acceleration.",
         "products": [
             {
-                "categoryId": 5,
+                "productId": 17,
                 "name": "Porsche Taycan TurboS",
                 "image": "https://i.ytimg.com/vi/Oi-xWqXnufI/maxresdefault.jpg",
                 "resale": 174950,
@@ -276,7 +276,7 @@
                 "location": "BR, USA"
             },
             {
-                "categoryId": 5,
+                "productId": 18,
                 "name": "Mercedes-Benz EQS 580 4Matic",
                 "image": "https://cdntdreditorials2.azureedge.net/cache/0/1/a/b/0/7/01ab07c54d3c3a2506b46aee9d11bc3a4e3a2bcc.jpg",
                 "resale": 169000,
@@ -290,7 +290,7 @@
                 "location": "BZ, USA"
             },
             {
-                "categoryId": 5,
+                "productId": 19,
                 "name": "Audi RS E-Tron GT Quattro",
                 "image": "https://www.electrive.com/wp-content/uploads/2021/02/audi-e-tron-gt-2021-02-min.png",
                 "resale": 158000,
@@ -304,7 +304,7 @@
                 "location": "PL, USA"
             },
             {
-                "categoryId": 5,
+                "productId": 20,
                 "name": "Tesla Model X P100D",
                 "image": "https://i.insider.com/5b3bd0b24a26272a008b48a6?width=700",
                 "resale": 146000,

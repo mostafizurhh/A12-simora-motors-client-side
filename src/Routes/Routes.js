@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main/Main";
 import Blog from "../Pages/Blog/Blog";
-import CategoryDetails from "../Pages/CategoryDetails/CategoryDetails";
+import CategoryDetails from "../Pages/AllCategory/CategoryDetails";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import OurCars from "../Pages/OurCars/OurCars";
 import Register from "../Pages/Register/Register";
 import TheBrand from "../Pages/TheBrand/TheBrand";
+import PrivateRoute from './PrivateRoute';
 
 export const router = createBrowserRouter([
     {
@@ -39,7 +40,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/allcategories/:id',
-                element: <CategoryDetails></CategoryDetails>,
+                element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/allcategories/${params.id}`)
             }
         ]
