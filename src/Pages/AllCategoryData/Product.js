@@ -41,8 +41,12 @@ const Product = ({ product, setAvailableProduct }) => {
                     <p className='text-secondary'>Original: ${original}</p>
                 </div>
                 <div className="card-body pt-0">
-                    <label htmlFor="booking-modal" className="btn btn-primary hover:bg-secondary text-white"
-                        onClick={() => setAvailableProduct(product)}>Book Now</label>
+                    <label
+                        htmlFor="booking-modal" className="btn btn-primary hover:bg-secondary text-white"
+                        onClick={() => setAvailableProduct(product)}
+                    >
+                        Book Now
+                    </label>
                 </div>
             </div>
         </div>

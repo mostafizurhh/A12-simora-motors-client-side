@@ -6,7 +6,7 @@ import Product from './Product';
 
 const CategoryDetails = () => {
     const allproducts = useLoaderData();
-    const [availableProduct, setAvailableProduct] = useState({})
+    const [availableProduct, setAvailableProduct] = useState(null)
     // console.log(allproducts)
 
     return (
@@ -22,8 +22,16 @@ const CategoryDetails = () => {
                     </Product>)
                 }
             </div>
-            <BookingModal
-                availableProduct={availableProduct}></BookingModal>
+            <>
+                {
+                    availableProduct &&
+                    <BookingModal
+                        availableProduct={availableProduct}
+                        setAvailableProduct={setAvailableProduct}
+                    >
+                    </BookingModal>
+                }
+            </>
         </div>
     );
 };
