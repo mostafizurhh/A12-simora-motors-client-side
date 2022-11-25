@@ -1,0 +1,32 @@
+[
+    {
+        "categoryId": 1,
+        "name": "Disel Cars",
+        "photo": "https://cargtr.com/wp-content/uploads/2020/12/%D8%A7%D9%88%D8%AF%D9%8A-S6-2021-3.jpg",
+        "description": "Diesel engines are highly efficient and are more durable with their engine setup. Diesels provide you with more torque when driving. A diesel car has a better resale value as its fuel quality has improved dramatically over the past 20 years. Moreover, You can burn more than one type of fuel in diesel cars and some diesel engines can operate quietly."
+    },
+    {
+        "categoryId": 2,
+        "name": "Petrol Cars",
+        "photo": "https://img.autotrader.co.za/4436895/Crop800x600",
+        "description": "Petrol cars cost less than their diesel counterparts. Many more make and models are available in petrol version, especially in hatchback body type. The petrol engines are considered more responsive and powerful than diesel engines. The engine noise of petrol cars is much lesser than diesel cars. The maintenance cost of a petrol engine is usually lower than the diesel cars of the same make and model. The petrol vehicles deal better with demanding climate conditions such as extreme cold"
+    },
+    {
+        "categoryId": 3,
+        "name": "LPG Cars",
+        "photo": "https://images.drive.com.au/driveau/image/upload/c_fill,f_auto,g_auto,h_674,q_auto:eco,w_1200/cms/uploads/lpg-261",
+        "description": "Driving on LPG instead of petrol or diesel, CO2 emissions lower about 10%. Also, LPG releases 55% less NOx (nitrogen oxide) than petrol and 96% less than diesel, as well as 8% less particulate matter than petrol and 11% less than diesel. The LPG System, original equipped or installed aftermarket, allows you to save a lot. How much does 1 litre of LPG cost? One of the biggest advantages is fuel cost, for sure; it costs 60% less than petrol. A road tax reduction is granted in case of purchase of a bi-fuel car or conversion of a petrol car, according to your residence. LPG systems are more and more safe and efficient, so that vehicle performances basically don’t change after converting it. In many cities, an LPG car can move freely in traffic restriction areas too."
+    },
+    {
+        "categoryId": 4,
+        "name": "Hybrid Cars",
+        "photo": "https://bluesky-cogcms-prodb.cdn.imgeng.in/media/35486/screenshot-2020-06-09-at-091656.png?&width=1500",
+        "description": "Hybrid car has Greater Fuel Efficiency because it doesn't solely rely on their gas engine to run, less fuel may be needed to propel a hybrid vehicle. The effect — improved fuel efficiency. Hybrids have better fuel efficiency and conserve more energy, thus emitting fewer carbon emissions. Since hybrid vehicles are able to utilize the high voltage battery pack and electric motor(s) for propulsion, they don't rely on fossil fuels as much as standard gas cars. When you apply the brakes while driving most hybrid vehicles, energy is produced and used to recharge your high voltage battery. This action can result in less fuel consumption."
+    },
+    {
+        "categoryId": 5,
+        "name": "Electric Cars",
+        "photo": "https://assignmenthelp4me.com/assets/img/latest-homepage/tesla-model-bluefire.jpg",
+        "description": "Electric vehicles have many benefits, including: Cleaner environment, No congestion charge, Lower running costs, Renewable electricity tariffs, Better driving experience, Government funding, Free parking, Reduced noise pollution, Increased resale value. Paying $0.10 per kW is the equivalent of driving on gasoline that costs less than $1 per gallon. On average, drivers save about $700 in fuel costs per year while driving electric cars. Drivers of electric vehicles have reduced CO2 emissions by more than 177,758,804 kg. Electric motors have less parts that lead to less damage than a traditional non electric vehicle which means you save on operating cost! Electric cars are not only lighter but have faster acceleration."
+    }
+]
