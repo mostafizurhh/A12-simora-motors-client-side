@@ -20,16 +20,7 @@ const Header = () => {
         {
             user?.uid ?
                 <>
-                    <li tabIndex={0}>
-                        <Link to='/dashboard' className="justify-between">
-                            Dashboard
-                            <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-                        </Link>
-                        <ul className=" text-white bg-primary rounded-lg">
-                            <li><Link>Submenu 1</Link></li>
-                            <li><Link>Submenu 2</Link></li>
-                        </ul>
-                    </li>
+                    <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
                     <li><button onClick={handleLogout}>Logout</button></li>
                 </>
                 :
@@ -62,13 +53,13 @@ const Header = () => {
                     </ul>
                 </div>
                 <img src={Logo} alt="" className='hidden md:block' style={{ height: 56, width: 56 }} />
-                <Link to='/' className="btn btn-ghost flex-col">
-                    <p className='text-primary text-xl'>SIMORA</p>
+                <Link to='/' className="flex-col text-center">
+                    <p className='text-primary text-2xl'>SIMORA</p>
                     <p className='capitalize italic text-secondary'>Motors</p>
                 </Link>
             </div>
-            <div className="navbar-end hidden md:flex">
-                <ul className="menu menu-horizontal p-0">
+            <div className="lg:navbar-end hidden md:navbar-center md:flex">
+                <ul className="menu menu-horizontal">
                     {menuItems}
                 </ul>
             </div>

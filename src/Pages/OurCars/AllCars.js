@@ -8,7 +8,7 @@ const AllCars = ({ allcars }) => {
     const { _id, name, image, resale, original, year, month, type, milage, seller, location, posted } = allcars;
 
     return (
-        <div className="card md:card-side p-2 bg-base-100 border shadow-xl mb-8 mt-8 ">
+        <div className="card md:card-side p-2 bg-base-100 border shadow-xl mb-8 ">
             <PhotoView src={image}>
                 <figure><img src={image} alt="cars" style={{ height: 300, width: 450 }} className='p-6' /></figure>
             </PhotoView>
