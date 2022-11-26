@@ -11,6 +11,7 @@ import PrivateRoute from './PrivateRoute';
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 import DashBoard from "../layout/DashBoard/DashBoard";
 import MyOrders from "../Pages/MyOrders/MyOrders";
+import Payment from "../Pages/Payment/Payment";
 
 
 export const router = createBrowserRouter([
@@ -60,6 +61,11 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/myorders',
                 element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`http://localhost:5000/booking/${params.id}`)
             }
         ]
     },

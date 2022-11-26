@@ -7,7 +7,7 @@ const MyOrders = () => {
 
     const { user } = useContext(AuthContext);
 
-    const { data: bookings = [], refetch } = useQuery({
+    const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: () => fetch(`http://localhost:5000/booking?email=${user?.email}`, {
             headers: {
@@ -53,7 +53,7 @@ const MyOrders = () => {
                                                 <button className='btn btn-primary text-white btn-sm'>Pay Now</button></Link>
                                         }
                                         {
-                                            booking.price && booking.paid && <span className='text-success font-bold'>Paid</span>
+                                            booking.price && booking.paid && <span className='text-green-700 font-bold btn btn-ghost text-xl'>Paid</span>
                                         }
                                     </td>
                                 </tr>
