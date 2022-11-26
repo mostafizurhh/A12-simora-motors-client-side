@@ -116,7 +116,6 @@ const Register = () => {
                 const user = result.user;
                 console.log(user)
                 handleUpdateUserInfo(user.displayName, user.photoURL, user.email)
-                navigate(from, { replace: true })
                 toast.success('Registration Successful', { duration: 3000 })
                 setError('')
             })

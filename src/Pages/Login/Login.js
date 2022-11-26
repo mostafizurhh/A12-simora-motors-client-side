@@ -38,12 +38,6 @@ const Login = () => {
                 setLoggedinUserEmail(email)
                 setError('')
                 form.reset()
-                /* restrict user to navigate unless email verification */
-                /* if (user.emailVerified) {
-                    navigate(from, { replace: true })}/* navigate user */
-                /* else {
-                    toast.error('Please verify your email first')
-                } */
             })
             .catch(e => {
                 console.error(e)
@@ -61,7 +55,6 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                navigate(from, { replace: true })
                 setLoggedinUserEmail(user.email)
                 setError('')
             })

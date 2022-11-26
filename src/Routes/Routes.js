@@ -8,6 +8,8 @@ import OurCars from "../Pages/OurCars/OurCars";
 import Register from "../Pages/Register/Register";
 import TheBrand from "../Pages/TheBrand/TheBrand";
 import PrivateRoute from './PrivateRoute';
+import DashBoard from "../layout/Dashboard/DashBoard";
+import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
     {
@@ -42,7 +44,17 @@ export const router = createBrowserRouter([
                 path: '/allcategories/:id',
                 element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/allcategories/${params.id}`)
+            },
+            {
+                path: '/dashboard',
+                element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>
             }
         ]
+    },
+
+    {
+        path: '*',
+        element: <ErrorPage></ErrorPage>
     }
+
 ])
