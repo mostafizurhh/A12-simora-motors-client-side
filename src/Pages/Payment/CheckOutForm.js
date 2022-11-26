@@ -19,7 +19,7 @@ const CheckOutForm = ({ booking }) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                authorization: `bearer ${process.env.REACT_APP_STRIPE_PK}`
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify({ price }),
         })
@@ -99,7 +99,6 @@ const CheckOutForm = ({ booking }) => {
                         setSuccess('Payment is Successful');
                         setTransactionId(paymentIntent.id);
                     }
-
                 })
         }
         setLoading(false)
@@ -125,12 +124,13 @@ const CheckOutForm = ({ booking }) => {
                         },
                     }}
                 />
-                <button className='btn btn-sm btn-primary text-white mt-8 mb-5' type="submit"
+                <button className='btn btn-sm btn-primary text-white mt-16' type="submit"
                     disabled={!stripe || !clientSecret || loading}>
                     Pay
                 </button>
             </form>
-            <p className='text-red-600 font-normal'> {error}</p>
+            <p className='text-red-600 font-normal'> {error}
+            </p>
             {success &&
                 <div>
                     <p className='text-green-600 font-bold text-xl'>{success}</p>

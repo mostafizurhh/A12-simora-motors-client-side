@@ -12,6 +12,6 @@ function App() {
     </div>
   );
 }
-//test@gmail.com iMg6NS8%xTNq
-//romel@gmail.com FzMCZi63zT@g
+//test@gmail.com iMg6NS8%xTNq (admin)
+//romel@gmail.com FzMCZi63zT@g (seller)
 export default App;

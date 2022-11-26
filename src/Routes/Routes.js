@@ -10,8 +10,16 @@ import TheBrand from "../Pages/TheBrand/TheBrand";
 import PrivateRoute from './PrivateRoute';
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 import DashBoard from "../layout/DashBoard/DashBoard";
-import MyOrders from "../Pages/MyOrders/MyOrders";
+import MyOrders from "../layout/DashBoard/MyOrders";
 import Payment from "../Pages/Payment/Payment";
+import AllUsers from "../layout/DashBoard/AllUsers";
+import AdminRoute from './AdminRoute';
+import AllBuyers from '../layout/DashBoard/AllBuyers';
+import AllSellers from '../layout/DashBoard/AllSellers';
+import MyProducts from '../layout/DashBoard/MyProducts';
+import SellerRoute from './SellerRoute';
+import AddAProduct from '../layout/DashBoard/AddAProduct';
+import MyBuyers from '../layout/DashBoard/MyBuyers';
 
 
 export const router = createBrowserRouter([
@@ -59,13 +67,37 @@ export const router = createBrowserRouter([
                 element: <MyOrders></MyOrders>
             },
             {
-                path: '/dashboard/myorders',
+                path: '/dashboard/myOrders',
                 element: <MyOrders></MyOrders>
             },
             {
                 path: '/dashboard/payment/:id',
                 element: <Payment></Payment>,
-                loader: ({ params }) => fetch(`http://localhost:5000/booking/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/bookings/${params.id}`)
+            },
+            {
+                path: '/dashboard/allUsers',
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            },
+            {
+                path: '/dashboard/allBuyers',
+                element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
+            },
+            {
+                path: '/dashboard/allSellers',
+                element: <AdminRoute><AllSellers></AllSellers></AdminRoute>
+            },
+            {
+                path: '/dashboard/myProducts',
+                element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
+            },
+            {
+                path: '/dashboard/addAProduct',
+                element: <SellerRoute><AddAProduct></AddAProduct></SellerRoute>
+            },
+            {
+                path: '/dashboard/myBuyers',
+                element: <SellerRoute><MyBuyers></MyBuyers></SellerRoute>
             }
         ]
     },

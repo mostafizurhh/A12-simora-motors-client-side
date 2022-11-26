@@ -31,7 +31,7 @@ const BookingModal = ({ availableProduct, product, setAvailableProduct }) => {
         }
 
         /* send bookingInfo data to server to create a new collection */
-        fetch('http://localhost:5000/booking', {
+        fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

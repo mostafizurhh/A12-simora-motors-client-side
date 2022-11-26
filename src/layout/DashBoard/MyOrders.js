@@ -4,17 +4,18 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthContext/AuthProvider';
 
 const MyOrders = () => {
-
-    const { user } = useContext(AuthContext);
-
+    const { user } = useContext(AuthContext)
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
-        queryFn: () => fetch(`http://localhost:5000/booking?email=${user?.email}`, {
-            headers: {
-                authorization: `bearer ${localStorage.getItem('accessToken')}`
-            }
-        })
-            .then(res => res.json())
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/bookings?email=${user?.email}`, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
+            const data = await res.json();
+            return data;
+        }
     })
 
     return (

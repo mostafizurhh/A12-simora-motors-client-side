@@ -20,9 +20,7 @@ const Header = () => {
         {
             user?.uid ?
                 <>
-                    <label htmlFor='dashboard-drawer'>
-                        <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
-                    </label>
+                    <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
                     <li><button onClick={handleLogout}>Logout</button></li>
                 </>
                 :
@@ -62,7 +60,6 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-
             </div>
             <div className="lg:navbar-end hidden md:navbar-center md:flex">
                 <ul className="menu menu-horizontal">
