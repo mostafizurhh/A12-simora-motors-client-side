@@ -9,6 +9,8 @@ import Register from "../Pages/Register/Register";
 import TheBrand from "../Pages/TheBrand/TheBrand";
 import PrivateRoute from './PrivateRoute';
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
+import DashBoard from "../layout/DashBoard/DashBoard";
+import MyOrders from "../Pages/MyOrders/MyOrders";
 
 
 export const router = createBrowserRouter([
@@ -44,14 +46,23 @@ export const router = createBrowserRouter([
                 path: '/allcategories/:id',
                 element: <PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/allcategories/${params.id}`)
-            },
-            {
-                path: '/dashboard',
-                element: <PrivateRoute></PrivateRoute>
             }
         ]
     },
-
+    {
+        path: '/dashboard',
+        element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/myorders',
+                element: <MyOrders></MyOrders>
+            }
+        ]
+    },
     {
         path: '*',
         element: <ErrorPage></ErrorPage>

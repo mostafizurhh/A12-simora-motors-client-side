@@ -20,7 +20,9 @@ const Header = () => {
         {
             user?.uid ?
                 <>
-                    <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
+                    <label htmlFor='dashboard-drawer'>
+                        <li><NavLink to='/dashboard'>DashBoard</NavLink></li>
+                    </label>
                     <li><button onClick={handleLogout}>Logout</button></li>
                 </>
                 :
@@ -44,19 +46,23 @@ const Header = () => {
     return (
         <div className="navbar bg-base-100 p-0 mt-5">
             <div className="navbar-start">
+                <label htmlFor="dashboard-drawer">
+                    <img src={Logo} alt="" style={{ height: 56, width: 56 }} />
+                </label>
+                <Link to='/' className="flex-col text-center hidden md:block">
+                    <p className='text-primary text-2xl'>SIMORA</p>
+                    <p className='capitalize italic text-secondary'>Motors</p>
+                </Link>
                 <div className="dropdown">
-                    <label tabIndex={0} className=" md:hidden">
-                        <img src={Logo} alt="" style={{ width: 40, height: 40 }} />
+                    <label tabIndex={0} className="md:hidden text-center">
+                        <p className='text-primary text-2xl'>SIMORA</p>
+                        <p className='capitalize italic text-secondary'>Motors</p>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         {menuItems}
                     </ul>
                 </div>
-                <img src={Logo} alt="" className='hidden md:block' style={{ height: 56, width: 56 }} />
-                <Link to='/' className="flex-col text-center">
-                    <p className='text-primary text-2xl'>SIMORA</p>
-                    <p className='capitalize italic text-secondary'>Motors</p>
-                </Link>
+
             </div>
             <div className="lg:navbar-end hidden md:navbar-center md:flex">
                 <ul className="menu menu-horizontal">

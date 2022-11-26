@@ -4,7 +4,7 @@ import { AuthContext } from '../../Contexts/AuthContext/AuthProvider';
 
 const BookingModal = ({ availableProduct, product, setAvailableProduct }) => {
     // console.log()
-    const { name, resale } = availableProduct;
+    const { name, resale, image, seller } = availableProduct;
     const { user } = useContext(AuthContext)
 
     const handleBooking = event => {
@@ -17,15 +17,17 @@ const BookingModal = ({ availableProduct, product, setAvailableProduct }) => {
         const location = form.meeting.value;
 
         const bookinginfo = {
-            bookingId: availableProduct.productId,
-            bookingTitle: name,
+            bookingProductId: availableProduct.productId,
+            name,
             price: resale,
             bookingDate: new Date(),
             customer,
             email,
             phone,
             type: availableProduct.type,
-            location
+            location,
+            image,
+            seller
         }
 
         /* send bookingInfo data to server to create a new collection */
