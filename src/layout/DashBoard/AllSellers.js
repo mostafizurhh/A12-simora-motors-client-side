@@ -29,6 +29,7 @@ const AllSellers = () => {
         }
     }
 
+    /* update user verification status */
     const handleVerify = id => {
         fetch(`http://localhost:5000/users/admin/${id}`, {
             method: 'PUT'
@@ -37,7 +38,7 @@ const AllSellers = () => {
             .then(data => {
                 console.log(data)
                 if (data.modifiedCount > 0) {
-                    toast.success('Seller Verified')
+                    toast.success('Seller Verified', { duration: 3000 })
                     refetch()
                 }
             })

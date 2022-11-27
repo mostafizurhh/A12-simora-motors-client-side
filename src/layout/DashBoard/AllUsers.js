@@ -33,15 +33,16 @@ const AllUsers = () => {
         }
     }
 
+    /* update userCategory */
     const handleUserCategory = id => {
         fetch(`http://localhost:5000/users/admin/${id}`, {
-            method: 'PUT'
+            method: 'PATCH'
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 if (data.modifiedCount > 0) {
-                    toast.success('User Category Modified')
+                    toast.success('User Category Modified', { duration: 3000 })
                     refetch()
                 }
             })
