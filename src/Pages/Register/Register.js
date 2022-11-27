@@ -7,8 +7,10 @@ import google from '../../assets/icons/Google.png'
 import { AuthContext } from '../../Contexts/AuthContext/AuthProvider';
 import { useToken } from '../../Hooks/useToken/useToken';
 
+
 const Register = () => {
     const [error, setError] = useState();
+
 
     const { createUser, providerLogin, updateUserInfo } = useContext(AuthContext)
 

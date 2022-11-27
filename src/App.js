@@ -14,4 +14,5 @@ function App() {
 }
 //test@gmail.com iMg6NS8%xTNq (admin)
 //romel@gmail.com FzMCZi63zT@g (seller)
+//rasal@gmail.com WOxt*xUS*4U^ (seller)
 export default App;

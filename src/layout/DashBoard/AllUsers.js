@@ -4,8 +4,6 @@ import toast from 'react-hot-toast';
 import Spinner from '../../Pages/Shared/Spinner/Spinner';
 
 const AllUsers = () => {
-
-
     /* load all users data from server */
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
@@ -22,7 +20,7 @@ const AllUsers = () => {
         const proceed = window.confirm('Are you sure to delete?')
         if (proceed) {
             fetch(`http://localhost:5000/users/${id}`, {
-                method: 'DELETE',
+                method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
@@ -34,6 +32,21 @@ const AllUsers = () => {
                 })
         }
     }
+
+    const handleUserCategory = id => {
+        fetch(`http://localhost:5000/users/admin/${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    toast.success('User Category Modified')
+                    refetch()
+                }
+            })
+    }
+
 
     if (isLoading) {
         return <Spinner></Spinner>
@@ -50,6 +63,7 @@ const AllUsers = () => {
                             <th>Name</th>
                             <th>email</th>
                             <th>User Category</th>
+                            <th>Set User Category</th>
                             <th>Remove Data</th>
                         </tr>
                     </thead>
@@ -61,7 +75,12 @@ const AllUsers = () => {
                                     <th>{i + 1}</th>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
-                                    <td>{user.userCategory || user.role}</td>
+                                    <td>{user.userCategory}</td>
+                                    <td>{
+                                        user.userCategory ? '' :
+                                            <button onClick={() => handleUserCategory(user._id)} className='btn btn-primary btn-xs'>Set Category</button>
+                                    }
+                                    </td>
                                     <td><button onClick={() => handleDelete(user._id)} className='btn btn-error btn-sm'>Delete</button></td>
                                 </tr>
                             )
