@@ -3,7 +3,7 @@ import React from 'react';
 import { FaGasPump, FaRegCheckCircle } from 'react-icons/fa';
 import { PhotoView } from 'react-photo-view';
 
-const AdvertisedItem = ({ item, setAvailableProduct }) => {
+const AdvertisedItem = ({ item, setAdvertiseItem }) => {
     const { name, image, resale, original, year, month, type, milage, seller, location, posted, phone, email, photoURL, condition, saleStatus } = item;
 
     const { data: users = [] } = useQuery({
@@ -11,6 +11,7 @@ const AdvertisedItem = ({ item, setAvailableProduct }) => {
         queryFn: () => fetch('http://localhost:5000/users/')
             .then(res => res.json())
     })
+
     if (saleStatus === 'Available') {
 
         return (
@@ -61,8 +62,9 @@ const AdvertisedItem = ({ item, setAvailableProduct }) => {
                 </div>
                 <div className="card-body pt-0">
                     <label
-                        htmlFor="booking-modal" className="btn btn-primary hover:bg-secondary text-white"
-                        onClick={() => setAvailableProduct(item)}
+                        htmlFor='bookModal'
+                        className="btn btn-primary hover:bg-secondary text-white"
+                        onClick={() => setAdvertiseItem(item)}
                     >
                         Book Now
                     </label>

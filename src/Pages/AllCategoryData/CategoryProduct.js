@@ -4,7 +4,7 @@ import { PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 
-const Product = ({ product, setAvailableProduct }) => {
+const CategoryProduct = ({ product, setAvailableProduct }) => {
     // console.log(product)
     const { name, image, resale, original, year, month, type, milage, seller, location, posted } = product;
 
@@ -53,4 +53,4 @@ const Product = ({ product, setAvailableProduct }) => {
     );
 };
 
-export default Product;
+export default CategoryProduct;

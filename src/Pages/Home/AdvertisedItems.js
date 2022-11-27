@@ -2,11 +2,13 @@ import { useQuery } from '@tanstack/react-query';
 import AdvertisedItem from './AdvertisedItem';
 import Spinner from '../Shared/Spinner/Spinner';
 import { useState } from 'react';
+import ItemBookModal from './ItemBookModal';
 
 
 const AdvertisedItems = () => {
     // const { user } = useContext(AuthContext)
-    const [availableProduct, setAvailableProduct] = useState(null)
+    const [advertiseItem, setAdvertiseItem] = useState(null)
+
     const { data: advertisedItems = [], isLoading } = useQuery({
         queryKey: ['advertisedItems'],
         queryFn: () => fetch(`http://localhost:5000/advertisedItems`, {
@@ -31,11 +33,21 @@ const AdvertisedItems = () => {
                         advertisedItems.map((item, i) => <AdvertisedItem
                             key={i}
                             item={item}
-                            setAvailableProduct={setAvailableProduct}
+                            setAdvertiseItem={setAdvertiseItem}
                         >
                         </AdvertisedItem>)
                     }
                 </div>
+                <>
+                    {
+                        advertiseItem &&
+                        <ItemBookModal
+                            advertiseItem={advertiseItem}
+                            setAdvertiseItem={setAdvertiseItem}>
+
+                        </ItemBookModal>
+                    }
+                </>
                 {/* <Link to='/ourcars'>
                     <button className='btn btn-primary btn-sm text-white hover:bg-secondary mt-8 mb-8'>More Items</button>
                 </Link> */}

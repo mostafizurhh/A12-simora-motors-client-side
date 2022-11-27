@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BookingModal from './BookingModal';
-import Product from './Product';
+import CategoryProduct from './CategoryProduct';
 
 
 const CategoryDetails = () => {
@@ -14,12 +14,12 @@ const CategoryDetails = () => {
             <p className='mt-8 text-primary font-bold text-2xl'>{allproducts.categoryName}</p>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
                 {
-                    allproducts.products.map((product, i) => <Product
+                    allproducts.products.map((product, i) => <CategoryProduct
                         key={i}
                         product={product}
                         setAvailableProduct={setAvailableProduct}
                     >
-                    </Product>)
+                    </CategoryProduct>)
                 }
             </div>
             <>
