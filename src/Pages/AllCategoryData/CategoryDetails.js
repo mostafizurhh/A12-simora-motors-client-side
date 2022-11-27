@@ -4,10 +4,26 @@ import BookingModal from './BookingModal';
 import CategoryProduct from './CategoryProduct';
 
 
+
 const CategoryDetails = () => {
     const allproducts = useLoaderData();
     const [availableProduct, setAvailableProduct] = useState(null)
-    // console.log(allproducts)
+    console.log(allproducts)
+
+    // const { user } = useContext(AuthContext)
+    // const { data: booking = [] } = useQuery({
+    //     queryKey: ['booking', user?.email],
+    //     queryFn: async () => {
+    //         const res = await fetch(`http://localhost:5000/bookings?email=${user?.email}`, {
+    //             headers: {
+    //                 authorization: `bearer ${localStorage.getItem('accessToken')}`
+    //             }
+    //         });
+    //         const data = await res.json();
+    //         return data;
+    //     }
+    // })
+
 
     return (
         <div>
@@ -18,6 +34,7 @@ const CategoryDetails = () => {
                         key={i}
                         product={product}
                         setAvailableProduct={setAvailableProduct}
+                    // booking={booking}
                     >
                     </CategoryProduct>)
                 }

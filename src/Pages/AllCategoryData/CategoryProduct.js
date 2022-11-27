@@ -4,9 +4,10 @@ import { PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 
-const CategoryProduct = ({ product, setAvailableProduct }) => {
+const CategoryProduct = ({ product, setAvailableProduct, booking }) => {
     // console.log(product)
     const { name, image, resale, original, year, month, type, milage, seller, location, posted } = product;
+
 
     return (
         <div className="card md:card-side p-2 bg-base-100 border shadow-xl mb-8 mt-8 ">
@@ -51,6 +52,9 @@ const CategoryProduct = ({ product, setAvailableProduct }) => {
             </div>
         </div>
     );
+
+
+
 };
 
 export default CategoryProduct;
