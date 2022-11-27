@@ -19,7 +19,7 @@ const ProductCategories = () => {
 
     return (
         <div>
-            <h2 className='text-2xl font-bold mb-8 text-primary text-center'>Select Your Favourite Category</h2>
+            <h2 className='text-2xl font-bold mt-16 mb-16 text-primary text-center'>Select Your Favourite Category</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 md:gap-1 gap-6'>
                 {
                     categories.map((category) => <Category

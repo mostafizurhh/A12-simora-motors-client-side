@@ -97,7 +97,7 @@ const Login = () => {
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                             <label className="label">
-                                <button onClick={handlePassowrdReset} href="#" className="  label-text-alt link link-hover">Forgot password?</button>
+                                <button onClick={handlePassowrdReset} className=" link link-hover">Forgot password?</button>
                             </label>
                         </div>
                         <div className='mt-3 text-red-700'>

@@ -10,7 +10,7 @@ import ProductCategories from '../AllCategoryData/ProductCategories';
 
 const Home = () => {
     return (
-        <div className='mt-5 mb-10'>
+        <div className='mt-5 mb-16'>
             <Info></Info>
             <Banner></Banner>
             <AdvertisedItems></AdvertisedItems>

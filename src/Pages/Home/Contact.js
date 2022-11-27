@@ -3,7 +3,7 @@ import { FaClock, FaEnvelope, FaPhoneSquareAlt, FaMapMarkerAlt } from 'react-ico
 
 const Contact = () => {
     return (
-        <div className='mt-8 mb-8 text-center'>
+        <div className='mt-16 text-center'>
             <h2 className=' text-primary text-2xl font-bold mb-5'>Contact Us</h2>
             <div className='lg:flex justify-between bg-primary text-white p-8'>
                 <div className='flex items-center justify-center mt-3'>
@@ -16,8 +16,8 @@ const Contact = () => {
                 </div>
                 <div className='flex items-center justify-center mt-3'>
                     <FaClock className='text-white mr-2'></FaClock>
-                    <p>Opening Hours: </p>
-                    <p>Monday-Friday (8-18)</p>
+                    <p>Opening Hours: <br />
+                        Monday-Friday (8-18)</p>
                 </div>
                 <div className='flex items-center justify-center mt-3'>
                     <FaMapMarkerAlt className='text-white mr-2'></FaMapMarkerAlt>
