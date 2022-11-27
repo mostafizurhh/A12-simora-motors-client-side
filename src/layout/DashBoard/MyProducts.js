@@ -84,7 +84,7 @@ const MyProducts = () => {
                                 >
                                     <th>{i + 1}</th>
                                     <td>
-                                        <div className='avatar lg:w-full w-36 lg:h-36'>
+                                        <div className='avatar w-36'>
                                             <img src={item.image} alt="" />
                                         </div>
                                     </td>
