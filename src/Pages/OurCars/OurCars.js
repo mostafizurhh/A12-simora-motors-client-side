@@ -22,7 +22,8 @@ const OurCars = () => {
                 alladvertisedItems.map((allcars, i) => <AllCars
                     key={i}
                     allcars={allcars}
-                    setAllAdvertiseItem={setAllAdvertiseItem}>
+                    setAllAdvertiseItem={setAllAdvertiseItem}
+                >
                 </AllCars>)
             }
             <>

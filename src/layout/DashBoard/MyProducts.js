@@ -16,11 +16,10 @@ const MyProducts = () => {
                 }
             })
             const data = await res.json();
-            // console.log(data)
+            console.log(data)
             return data;
         }
     })
-
 
     /* delete a product */
     const handleDelete = id => {
@@ -40,20 +39,33 @@ const MyProducts = () => {
         }
     }
 
-    /* update userCategory */
-    // const handleUserCategory = id => {
-    //     fetch(`http://localhost:5000/users/seller/${id}`, {
-    //         method: 'PATCH'
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //             if (data.modifiedCount > 0) {
-    //                 toast.success('Product Status Modified', { duration: 3000 })
-    //                 refetch()
-    //             }
-    //         })
-    // }
+    /* update product saleStatus */
+    const handleSaleStatus = id => {
+        fetch(`http://localhost:5000/advertised/${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    toast.success('Product Status Modified', { duration: 3000 })
+                    refetch()
+                }
+            })
+    }
+    const handleUpdateSaleStatus = id => {
+        fetch(`http://localhost:5000/advertised/${id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    toast.success('Product Status Modified', { duration: 3000 })
+                    refetch()
+                }
+            })
+    }
 
 
     if (isLoading) {
@@ -92,25 +104,38 @@ const MyProducts = () => {
                                     </td>
                                     <td>${item.resale}
                                     </td>
-                                    <td>{item.saleStatus}
-                                    </td>
+                                    {/* toggle button and change sale status */}
                                     <td>
-                                        <select name="" id="">
-                                            <option value="">Available</option>
-                                            <option value="">Sold</option>
-                                        </select>
+                                        {
+                                            item.saleStatus === 'Sold' &&
+                                            <button onClick={() => handleSaleStatus(item._id)} className='btn btn-primary btn-sm'>Sold</button>
+
+                                        }
+                                        {
+                                            item.saleStatus === 'Available' &&
+                                            <button onClick={() => handleSaleStatus(item._id)} className='btn btn-primary btn-sm'>Available
+                                            </button>
+
+                                        }
                                     </td>
+
+                                    {/* toggle button and change sale status */}
+                                    <td>
+                                        {
+                                            item.saleStatus === 'Sold' ||
+                                            <button onClick={() => handleUpdateSaleStatus(item._id)} className='btn btn-primary btn-sm'>Sold</button>
+
+                                        }
+                                        {
+                                            item.saleStatus === 'Available' ||
+                                            <button onClick={() => handleUpdateSaleStatus(item._id)} className='btn btn-primary btn-sm'>Available
+                                            </button>
+
+                                        }
+                                    </td>
+
                                     <td>
                                         <button onClick={() => handleDelete(item._id)} className='btn btn-error btn-sm'>Delete</button></td>
-                                    {/* <td>
-                                        {
-                                            item.price && !booking.paid && <Link to={`/dashboard/payment/${booking._id}`}>
-                                                <button className='btn btn-primary text-white btn-sm'>Pay Now</button></Link>
-                                        }
-                                        {
-                                            booking.price && booking.paid && <span className='text-green-700 font-bold btn btn-ghost text-xl'>Paid</span>
-                                        }
-                                    </td> */}
                                 </tr>
                             )
                         }

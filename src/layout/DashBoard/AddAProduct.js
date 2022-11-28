@@ -38,7 +38,6 @@ const AddAProduct = () => {
         const phone = form.phone.value;
         const location = form.location.value;
         const photoURL = form.photoURL.value;
-        const saleStatus = form.saleStatus.value;
 
         const advertised = {
             categoryId: categories._id,
@@ -57,7 +56,6 @@ const AddAProduct = () => {
             location,
             phone,
             photoURL,
-            saleStatus,
             posted: new Date()
         }
 
@@ -140,12 +138,6 @@ const AddAProduct = () => {
                 <input name='phone' type="text" placeholder="Your contact number" className="input input-bordered  max-w-md mb-3" required />
 
                 <input name='location' type="text" placeholder="Your location" className="input input-bordered max-w-md mb-3" required />
-
-                <select name='saleStatus' type="text" className="input input-bordered max-w-md mb-3" required>
-                    <option>Select Sale Status</option>
-                    <option>Available</option>
-                    <option>Sold</option>
-                </select>
 
                 <button className='btn btn-primary text-white mt-4 max-w-md'>Advertise</button>
             </form>

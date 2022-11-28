@@ -11,6 +11,8 @@ const Payment = () => {
     const booking = useLoaderData()
     const navigation = useNavigation();
 
+    // console.log(booking)
+
     if (navigation.state === 'loading') {
         return <Spinner></Spinner>
     }

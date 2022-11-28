@@ -1,13 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import AdvertisedItem from './AdvertisedItem';
 import Spinner from '../Shared/Spinner/Spinner';
-import { useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import ItemBookModal from './ItemBookModal';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthContext/AuthProvider';
 
 
 const AdvertisedItems = () => {
-    // const { user } = useContext(AuthContext)
     const [advertiseItem, setAdvertiseItem] = useState(null)
 
     const { data: advertisedItems = [], isLoading } = useQuery({
@@ -18,7 +18,8 @@ const AdvertisedItems = () => {
             }
         })
             .then(res => res.json())
-    })
+    });
+
 
     if (isLoading) {
         return <Spinner></Spinner>
@@ -31,6 +32,7 @@ const AdvertisedItems = () => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     {
+
                         advertisedItems.map((item, i) => <AdvertisedItem
                             key={i}
                             item={item}
