@@ -11,7 +11,7 @@ const AdvertisedItems = () => {
 
     const { data: advertisedItems = [], isLoading } = useQuery({
         queryKey: ['advertisedItems'],
-        queryFn: () => fetch(`https://simora-motors-server.vercel.app/advertisedItems`, {
+        queryFn: () => fetch(`http://localhost:5000/advertisedItems`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
             }
@@ -24,14 +24,14 @@ const AdvertisedItems = () => {
         return <Spinner></Spinner>
     }
 
-    if (advertisedItems.saleStatus === 'Available') {
+
+    if (advertisedItems.length > 0) {
         return (
             <div className='text-center'>
-                <h2 className='text-2xl font-bold mt-16 text-primary text-center'>Advertised items</h2>
 
+                <h2 className='text-2xl font-bold mt-16 text-primary text-center'>Advertised items</h2>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                     {
-
                         advertisedItems.map((item, i) => <AdvertisedItem
                             key={i}
                             item={item}
@@ -50,9 +50,9 @@ const AdvertisedItems = () => {
                         </ItemBookModal>
                     }
                 </>
-                <Link to='/ourcars'>
+                {/* <Link to='/ourcars'>
                     <button className='btn btn-primary text-white hover:bg-secondary mt-8 mb-8'>See More Items</button>
-                </Link>
+                </Link> */}
             </div>
         );
     }

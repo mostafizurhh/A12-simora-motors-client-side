@@ -8,7 +8,7 @@ const OurCars = () => {
     const [allAdvertiseItem, setAllAdvertiseItem] = useState(null)
     const { data: alladvertisedItems = [], isLoading } = useQuery({
         queryKey: ['alladvertisedItems'],
-        queryFn: () => fetch('https://simora-motors-server.vercel.app/advertisedItems')
+        queryFn: () => fetch('http://localhost:5000/advertisedItems')
             .then(res => res.json())
     })
 
@@ -16,31 +16,34 @@ const OurCars = () => {
         return <Spinner></Spinner>
     }
 
-    if (alladvertisedItems.saleStatus === 'Available') {
 
-        return (
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-8'>
+
+    return (
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-8'>
+            {
+                alladvertisedItems.map((allcars, i) => <AllCars
+                    key={i}
+                    allcars={allcars}
+                    setAllAdvertiseItem={setAllAdvertiseItem}
+                    allAdvertiseItem={allAdvertiseItem}
+                >
+                </AllCars>)
+            }
+            <>
                 {
-                    alladvertisedItems.map((allcars, i) => <AllCars
-                        key={i}
-                        allcars={allcars}
-                        setAllAdvertiseItem={setAllAdvertiseItem}
-                    >
-                    </AllCars>)
-                }
-                <>
-                    {
-                        allAdvertiseItem &&
-                        <BookModal
-                            allAdvertiseItem={allAdvertiseItem}
-                            setAllAdvertiseItem={setAllAdvertiseItem}>
+                    allAdvertiseItem &&
+                    <BookModal
+                        allAdvertiseItem={allAdvertiseItem}
+                        setAllAdvertiseItem={setAllAdvertiseItem}>
 
-                        </BookModal>
-                    }
-                </>
-            </div>
-        );
-    }
+                    </BookModal>
+                }
+            </>
+        </div>
+    );
+
+
+
 };
 
 export default OurCars;
