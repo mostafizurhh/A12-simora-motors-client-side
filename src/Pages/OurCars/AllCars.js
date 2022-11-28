@@ -16,12 +16,12 @@ const AllCars = ({ allcars, setAllAdvertiseItem }) => {
     })
 
     return (
-        <div className="card md:card-side p-2 bg-base-100 border shadow-xl mb-8 ">
+        <div className="card lg:card-side bg-base-100 border shadow-xl mb-8 ">
             <PhotoView src={image}>
-                <figure><img src={image} alt="cars" style={{ height: 300, width: 450 }} className='p-6' /></figure>
+                <figure><img src={image} alt="cars" className='h-full' /></figure>
             </PhotoView>
             <div className='flex-grow-1'>
-                <div className="card-body pt-4">
+                <div className="card-body">
                     <div className="card-title">{name}</div>
                     <div className='flex items-center'>
                         <FaGasPump className='mr-2'></FaGasPump>
@@ -56,22 +56,22 @@ const AllCars = ({ allcars, setAllAdvertiseItem }) => {
                     <p className='text-start font-bold text-primary'> Condition: {condition}</p>
                     <p className='text-start'>{posted}</p>
 
-                    <div className='flex mt-2'>
+                    <div className='flex my-2'>
                         <p className='text-primary font-extrabold text-start'>Sale: ${resale}</p>
                         <div className="divider divider-horizontal"></div>
                         <p className='text-secondary'>Original: ${original}</p>
                     </div>
+                    <div className="card-actions justify-end">
+                        <label
+                            htmlFor='bookModal'
+                            className="btn btn-primary hover:bg-secondary text-white"
+                            onClick={() => setAllAdvertiseItem(allcars)}
+                        >
+                            Book Now
+                        </label>
+                    </div>
                 </div>
 
-                <div className="card-body pt-0">
-                    <label
-                        htmlFor='bookModal'
-                        className="btn btn-primary hover:bg-secondary text-white"
-                        onClick={() => setAllAdvertiseItem(allcars)}
-                    >
-                        Book Now
-                    </label>
-                </div>
             </div>
         </div>
     );

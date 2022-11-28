@@ -15,12 +15,12 @@ const AdvertisedItem = ({ item, setAdvertiseItem }) => {
     if (saleStatus === 'Available') {
 
         return (
-            <div className="card bg-base-100 border shadow-xl mb-8 mt-8">
+            <div className="card card-compact w-96 bg-base-100 border shadow-xl mb-8 mt-8">
                 <PhotoView src={image}>
-                    <figure><img src={image} alt="cars" className='w-full p-4' style={{ height: 250, borderRadius: 30 }} /></figure>
+                    <figure><img src={image} alt="cars" /></figure>
                 </PhotoView>
 
-                <div className="card-body pt-4">
+                <div className="card-body">
                     <div className="card-title">{name}</div>
                     <div className='flex items-center'>
                         <FaGasPump className='mr-2'></FaGasPump>
@@ -35,8 +35,9 @@ const AdvertisedItem = ({ item, setAdvertiseItem }) => {
                     </div>
 
                     <div className='flex items-center'>
+                        {seller}
                         <div className='avatar'>
-                            <div className='w-5, h-10 rounded-full mr-2'>
+                            <div className='w-5, h-10 rounded-full mx-2'>
                                 <img src={photoURL} alt="" />
                             </div>
                         </div>
@@ -46,8 +47,6 @@ const AdvertisedItem = ({ item, setAdvertiseItem }) => {
                         {location}
                     </div>
                     <div className='flex text-sm'>
-                        {seller}
-                        <div className="divider divider-horizontal"></div>
                         {phone}
                         <div className="divider divider-horizontal"></div>
                         {email}
@@ -58,17 +57,17 @@ const AdvertisedItem = ({ item, setAdvertiseItem }) => {
                         <div className="divider divider-horizontal"></div>
                         <p className='text-secondary'>Original: ${original}</p>
                     </div>
+                    <div className="card-actions justify-end py-2">
+                        <label
+                            htmlFor='bookModal'
+                            className="btn btn-primary hover:bg-secondary text-white"
+                            onClick={() => setAdvertiseItem(item)}
+                        >
+                            Book Now
+                        </label>
+                    </div>
                 </div>
 
-                <div className="card-body pt-0">
-                    <label
-                        htmlFor='bookModal'
-                        className="btn btn-primary hover:bg-secondary text-white"
-                        onClick={() => setAdvertiseItem(item)}
-                    >
-                        Book Now
-                    </label>
-                </div>
             </div>
         );
     }
