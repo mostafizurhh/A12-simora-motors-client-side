@@ -3,7 +3,6 @@ import AdvertisedItem from './AdvertisedItem';
 import Spinner from '../Shared/Spinner/Spinner';
 import { useState } from 'react';
 import ItemBookModal from './ItemBookModal';
-import { Link } from 'react-router-dom';
 
 
 const AdvertisedItems = () => {
@@ -24,38 +23,36 @@ const AdvertisedItems = () => {
         return <Spinner></Spinner>
     }
 
+    return (
+        <div className='text-center'>
+            <h2 className='text-2xl font-bold mt-16 text-primary text-center'>Advertised items</h2>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                {
+                    advertisedItems.map((item, i) => <AdvertisedItem
+                        key={i}
+                        item={item}
+                        setAdvertiseItem={setAdvertiseItem}
+                    >
+                    </AdvertisedItem>)
+                }
+            </div>
 
-    if (advertisedItems.length > 0) {
-        return (
-            <div className='text-center'>
+            <>
+                {
+                    advertiseItem &&
+                    <ItemBookModal
+                        advertiseItem={advertiseItem}
+                        setAdvertiseItem={setAdvertiseItem}>
 
-                <h2 className='text-2xl font-bold mt-16 text-primary text-center'>Advertised items</h2>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                    {
-                        advertisedItems.map((item, i) => <AdvertisedItem
-                            key={i}
-                            item={item}
-                            setAdvertiseItem={setAdvertiseItem}
-                        >
-                        </AdvertisedItem>)
-                    }
-                </div>
-                <>
-                    {
-                        advertiseItem &&
-                        <ItemBookModal
-                            advertiseItem={advertiseItem}
-                            setAdvertiseItem={setAdvertiseItem}>
-
-                        </ItemBookModal>
-                    }
-                </>
-                {/* <Link to='/ourcars'>
+                    </ItemBookModal>
+                }
+            </>
+            {/* <Link to='/ourcars'>
                     <button className='btn btn-primary text-white hover:bg-secondary mt-8 mb-8'>See More Items</button>
                 </Link> */}
-            </div>
-        );
-    }
+        </div>
+    );
+
 };
 
 export default AdvertisedItems;

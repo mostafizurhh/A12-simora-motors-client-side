@@ -7,7 +7,11 @@ import Spinner from '../../Pages/Shared/Spinner/Spinner';
 const AllBuyers = () => {
     const { data: buyers = [], isLoading, refetch } = useQuery({
         queryKey: ['buyers'],
-        queryFn: () => fetch('http://localhost:5000/users/buyer')
+        queryFn: () => fetch('http://localhost:5000/users/buyer', {
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
     })
 
