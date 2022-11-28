@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Contexts/AuthContext/AuthProvider';
 
-const BookingModal = ({ availableProduct, product, setAvailableProduct }) => {
-    console.log(availableProduct)
-    const { name, resale, image, seller } = availableProduct;
+const BookModal = ({ allAdvertiseItem, product, setAllAdvertiseItem }) => {
+    // console.log(allAdvertiseItem)
+    const { name, resale, image, seller } = allAdvertiseItem;
     const { user } = useContext(AuthContext)
 
     const handleBooking = event => {
@@ -17,14 +17,14 @@ const BookingModal = ({ availableProduct, product, setAvailableProduct }) => {
         const location = form.meeting.value;
 
         const bookinginfo = {
-            bookingProductId: availableProduct.productId,
+            bookingId: allAdvertiseItem._id,
             name,
             price: resale,
             bookingDate: new Date(),
             customer,
             email,
             phone,
-            type: availableProduct.type,
+            type: allAdvertiseItem.type,
             location,
             image,
             seller
@@ -41,7 +41,7 @@ const BookingModal = ({ availableProduct, product, setAvailableProduct }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setAvailableProduct(null)
+                setAllAdvertiseItem(null)
                 toast.success('Your Booking Is Confirmed', { duration: 3000 });
             })
     }
@@ -49,10 +49,10 @@ const BookingModal = ({ availableProduct, product, setAvailableProduct }) => {
 
     return (
         <div>
-            <input type="checkbox" id="booking-modal" className="modal-toggle" />
+            <input type="checkbox" id="bookModal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box relative">
-                    <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <label htmlFor="bookModal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="text-lg text-primary mb-5 font-bold">{name}</h3>
                     <h3 className="text-lg font-bold mb-5 text-primary">Price: ${resale}</h3>
                     <form onSubmit={handleBooking}>
@@ -74,4 +74,4 @@ const BookingModal = ({ availableProduct, product, setAvailableProduct }) => {
     );
 };
 
-export default BookingModal;
+export default BookModal;

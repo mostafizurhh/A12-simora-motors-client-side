@@ -14,7 +14,7 @@ const Header = () => {
 
     const menuItems = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        {/* <li><NavLink to='/ourcars'>Our Cars</NavLink></li> */}
+        <li><NavLink to='/ourcars'>Our Cars</NavLink></li>
         <li><NavLink to='/thebrand'>The Brand</NavLink></li>
         <li><NavLink to='/blog'>Blog</NavLink></li>
         {

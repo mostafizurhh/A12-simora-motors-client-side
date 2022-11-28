@@ -4,7 +4,7 @@ import { FaGasPump, FaRegCheckCircle } from 'react-icons/fa';
 import { PhotoView } from 'react-photo-view';
 
 const AdvertisedItem = ({ item, setAdvertiseItem }) => {
-    const { name, image, resale, original, year, month, type, milage, seller, location, posted, phone, email, photoURL, condition, saleStatus } = item;
+    const { name, image, resale, original, year, month, type, milage, seller, location, phone, email, photoURL, saleStatus } = item;
 
     const { data: users = [] } = useQuery({
         queryKey: ['users'],
@@ -26,11 +26,11 @@ const AdvertisedItem = ({ item, setAdvertiseItem }) => {
                         <FaGasPump className='mr-2'></FaGasPump>
                         {type}
                     </div>
-                    <div className='flex text-sm'>
+                    <div className='flex font-semibold text-sm'>
                         {month}
-                        <p className='font-bold'>.</p>
+                        <div className="divider divider-horizontal"></div>
                         {year}
-                        <p className='font-bold'>.</p>
+                        <div className="divider divider-horizontal"></div>
                         {milage} km
                     </div>
 
@@ -47,15 +47,15 @@ const AdvertisedItem = ({ item, setAdvertiseItem }) => {
                     </div>
                     <div className='flex text-sm'>
                         {seller}
-                        <p>{phone}</p>
-                        <p>{email}</p>
+                        <div className="divider divider-horizontal"></div>
+                        {phone}
+                        <div className="divider divider-horizontal"></div>
+                        {email}
                     </div>
-
-                    {/* <p className='text-start'> Condition: {condition}</p>
-                        <p className='text-start'>{posted}</p> */}
 
                     <div className='flex mt-2'>
                         <p className='text-primary font-extrabold text-start'>Sale: ${resale}</p>
+                        <div className="divider divider-horizontal"></div>
                         <p className='text-secondary'>Original: ${original}</p>
                     </div>
                 </div>

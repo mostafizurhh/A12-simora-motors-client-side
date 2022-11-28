@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../Shared/Spinner/Spinner';
 import AllCars from './AllCars';
+import BookModal from './BookModal';
 
 const OurCars = () => {
-    const { data: allproducts = [], isLoading } = useQuery({
-        queryKey: ['allproducts'],
-        queryFn: () => fetch('http://localhost:5000/allproducts')
+    const [allAdvertiseItem, setAllAdvertiseItem] = useState(null)
+    const { data: alladvertisedItems = [], isLoading } = useQuery({
+        queryKey: ['alladvertisedItems'],
+        queryFn: () => fetch('http://localhost:5000/alladvertisedItems')
             .then(res => res.json())
     })
 
@@ -17,11 +19,22 @@ const OurCars = () => {
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8'>
             {
-                allproducts.map((allcars, i) => <AllCars
+                alladvertisedItems.map((allcars, i) => <AllCars
                     key={i}
-                    allcars={allcars}>
+                    allcars={allcars}
+                    setAllAdvertiseItem={setAllAdvertiseItem}>
                 </AllCars>)
             }
+            <>
+                {
+                    allAdvertiseItem &&
+                    <BookModal
+                        allAdvertiseItem={allAdvertiseItem}
+                        setAllAdvertiseItem={setAllAdvertiseItem}>
+
+                    </BookModal>
+                }
+            </>
         </div>
     );
 };

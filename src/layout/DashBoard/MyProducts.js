@@ -16,13 +16,13 @@ const MyProducts = () => {
                 }
             })
             const data = await res.json();
-            console.log(data)
+            // console.log(data)
             return data;
         }
     })
 
 
-    /* delete a user */
+    /* delete a product */
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete?')
         if (proceed) {

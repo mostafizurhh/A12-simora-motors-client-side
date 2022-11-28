@@ -3,6 +3,7 @@ import AdvertisedItem from './AdvertisedItem';
 import Spinner from '../Shared/Spinner/Spinner';
 import { useState } from 'react';
 import ItemBookModal from './ItemBookModal';
+import { Link } from 'react-router-dom';
 
 
 const AdvertisedItems = () => {
@@ -48,9 +49,9 @@ const AdvertisedItems = () => {
                         </ItemBookModal>
                     }
                 </>
-                {/* <Link to='/ourcars'>
-                    <button className='btn btn-primary btn-sm text-white hover:bg-secondary mt-8 mb-8'>More Items</button>
-                </Link> */}
+                <Link to='/ourcars'>
+                    <button className='btn btn-primary text-white hover:bg-secondary mt-8 mb-8'>See More Items</button>
+                </Link>
             </div>
         );
     }

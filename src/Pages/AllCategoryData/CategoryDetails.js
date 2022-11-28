@@ -8,7 +8,7 @@ import CategoryProduct from './CategoryProduct';
 const CategoryDetails = () => {
     const allproducts = useLoaderData();
     const [availableProduct, setAvailableProduct] = useState(null)
-    console.log(allproducts)
+    // console.log(allproducts)
 
     // const { user } = useContext(AuthContext)
     // const { data: booking = [] } = useQuery({
