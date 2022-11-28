@@ -7,7 +7,11 @@ import Spinner from '../../Pages/Shared/Spinner/Spinner';
 const AllSellers = () => {
     const { data: sellers = [], isLoading, refetch } = useQuery({
         queryKey: ['sellers'],
-        queryFn: () => fetch('http://localhost:5000/users/seller')
+        queryFn: () => fetch('https://simora-motors-server.vercel.app/users/seller', {
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
             .then(res => res.json())
     })
 
@@ -15,8 +19,11 @@ const AllSellers = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete?')
         if (proceed) {
-            fetch(`http://localhost:5000/users/${id}`, {
-                method: 'DELETE'
+            fetch(`https://simora-motors-server.vercel.app/users/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {
@@ -31,8 +38,11 @@ const AllSellers = () => {
 
     /* update user verification status */
     const handleVerify = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
-            method: 'PUT'
+        fetch(`https://simora-motors-server.vercel.app/users/admin/${id}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
         })
             .then(res => res.json())
             .then(data => {

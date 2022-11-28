@@ -10,7 +10,7 @@ const MyProducts = () => {
     const { data: items = [], isLoading, refetch } = useQuery({
         queryKey: ['items'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/advertised?email=${user?.email}`, {
+            const res = await fetch(`https://simora-motors-server.vercel.app/advertised?email=${user?.email}`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -25,8 +25,11 @@ const MyProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete?')
         if (proceed) {
-            fetch(`http://localhost:5000/advertised/${id}`, {
-                method: 'DELETE'
+            fetch(`https://simora-motors-server.vercel.app/advertised/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {
@@ -41,8 +44,11 @@ const MyProducts = () => {
 
     /* update product's currentSaleStatus */
     const handleSaleStatus = id => {
-        fetch(`http://localhost:5000/advertised/${id}`, {
-            method: 'PUT'
+        fetch(`https://simora-motors-server.vercel.app/advertised/${id}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
         })
             .then(res => res.json())
             .then(data => {
@@ -56,8 +62,11 @@ const MyProducts = () => {
 
     /* change product's saleStatus */
     const handleUpdateSaleStatus = id => {
-        fetch(`http://localhost:5000/advertised/${id}`, {
-            method: 'PATCH'
+        fetch(`https://simora-motors-server.vercel.app/advertised/${id}`, {
+            method: 'PATCH',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
         })
             .then(res => res.json())
             .then(data => {
