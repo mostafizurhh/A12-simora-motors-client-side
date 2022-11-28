@@ -4,15 +4,15 @@ import { PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 
-const CategoryProduct = ({ product, setAvailableProduct, booking }) => {
+const CategoryProduct = ({ product, setReportedItem, setAvailableProduct, booking }) => {
     // console.log(product)
     const { name, image, resale, original, year, month, type, milage, seller, location, posted } = product;
 
 
     return (
-        <div className="card md:card-side p-2 bg-base-100 border shadow-xl mb-8 mt-8 ">
+        <div className="card lg:card-side bg-base-100 border shadow-xl mb-8 mt-8 ">
             <PhotoView src={image}>
-                <figure><img src={image} alt="cars" style={{ height: 300, width: 450 }} className='p-6' /></figure>
+                <figure><img src={image} alt="cars" className='h-full' /></figure>
             </PhotoView>
             <div className='flex-grow-1'>
                 <div className="card-body">
@@ -41,13 +41,21 @@ const CategoryProduct = ({ product, setAvailableProduct, booking }) => {
                     <p className='text-primary font-extrabold'>Sale: ${resale}</p>
                     <p className='text-secondary'>Original: ${original}</p>
                 </div>
-                <div className="card-body pt-0">
+                <div className="card-body py-2">
+
                     <label
                         htmlFor="booking-modal" className="btn btn-primary hover:bg-secondary text-white"
                         onClick={() => setAvailableProduct(product)}
                     >
                         Book Now
                     </label>
+                    <label
+                        htmlFor="report-modal" className="btn btn-primary hover:bg-secondary text-white"
+                        onClick={() => setReportedItem(product)}
+                    >
+                        Report Now
+                    </label>
+
                 </div>
             </div>
         </div>
