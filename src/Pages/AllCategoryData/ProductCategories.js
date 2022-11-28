@@ -8,7 +8,7 @@ const ProductCategories = () => {
     const { data: categories = [], isLoading } = useQuery({
         queryKey: ['categories'],
         queryFn: () =>
-            fetch('http://localhost:5000/allcategories')
+            fetch('https://simora-motors-server.vercel.app/allcategories')
                 .then(res => res.json())
     })
     if (isLoading) {

@@ -12,7 +12,7 @@ const AdvertisedItems = () => {
 
     const { data: advertisedItems = [], isLoading } = useQuery({
         queryKey: ['advertisedItems'],
-        queryFn: () => fetch(`http://localhost:5000/advertisedItems`, {
+        queryFn: () => fetch(`https://simora-motors-server.vercel.app/advertisedItems`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
             }

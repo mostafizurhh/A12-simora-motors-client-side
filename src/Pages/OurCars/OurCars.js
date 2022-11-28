@@ -8,7 +8,7 @@ const OurCars = () => {
     const [allAdvertiseItem, setAllAdvertiseItem] = useState(null)
     const { data: alladvertisedItems = [], isLoading } = useQuery({
         queryKey: ['alladvertisedItems'],
-        queryFn: () => fetch('http://localhost:5000/alladvertisedItems')
+        queryFn: () => fetch('https://simora-motors-server.vercel.app/alladvertisedItems')
             .then(res => res.json())
     })
 
