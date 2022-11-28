@@ -137,7 +137,8 @@ const MyProducts = () => {
                                     </td>
 
                                     <td>
-                                        <button onClick={() => handleDelete(item._id)} className='btn btn-error btn-sm'>Delete</button></td>
+                                        <button onClick={() => handleDelete(item._id)} className='btn btn-error btn-sm'>Delete</button>
+                                    </td>
                                 </tr>
                             )
                         }
