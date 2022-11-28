@@ -19,3 +19,14 @@
 * There is private routes and pages which can not be seen until you login/register.
 * AuthContexts has been used.
 * Tailwind, DaisyUI, React Query, React photo view, React-hot-toast, React-Router-Dom, React Icons are some of the technology components/libraries that has been used in this project
+
+
+
+adminEmail: <test@gmail.com>
+
+adminPassword: iMg6NS8%xTNq
+
+
+sellerEmail: <romel@gmail.com>
+
+sellerPassword: <FzMCZi63zT@g>
