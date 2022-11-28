@@ -39,7 +39,7 @@ const MyProducts = () => {
         }
     }
 
-    /* update product saleStatus */
+    /* update product's currentSaleStatus */
     const handleSaleStatus = id => {
         fetch(`http://localhost:5000/advertised/${id}`, {
             method: 'PUT'
@@ -53,6 +53,8 @@ const MyProducts = () => {
                 }
             })
     }
+
+    /* change product's saleStatus */
     const handleUpdateSaleStatus = id => {
         fetch(`http://localhost:5000/advertised/${id}`, {
             method: 'PATCH'
@@ -83,8 +85,8 @@ const MyProducts = () => {
                             <th>Image</th>
                             <th>Title</th>
                             <th>Price</th>
-                            <th>Sale Status</th>
-                            <th>Change Status</th>
+                            <th>Current Sale Status</th>
+                            <th>Change Sale Status To</th>
                             <th>Remove Data</th>
                         </tr>
                     </thead>
