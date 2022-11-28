@@ -24,7 +24,7 @@
 
 adminEmail: <test@gmail.com>
 
-adminPassword: <iMg6NS8%xTNq>
+adminPassword: iMg6NS8%xTNq
 
 
 sellerEmail: <romel@gmail.com>
