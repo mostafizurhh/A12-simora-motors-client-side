@@ -1,29 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Category from './Category';
-import { useQuery } from '@tanstack/react-query';
-import Spinner from '../Shared/Spinner/Spinner';
+import axios from 'axios'
 
 const ProductCategories = () => {
+    const [categories, setCategories] = useState([])
 
-    const { data: categories = [], isLoading } = useQuery({
-        queryKey: ['categories'],
-        queryFn: () =>
-            fetch('https://simora-motors-server.vercel.app/allcategories')
-                .then(res => res.json())
-    })
-    if (isLoading) {
-        return <div className='text-center'>
-            <Spinner></Spinner>
-        </div>
+    const getAllCategories = () => {
+        axios.get('http://localhost:5000/allcategories')
+            .then(res => {
+                // console.log(res.data)
+                setCategories(res.data)
+            })
+            .catch(e => console.error(e))
     }
 
+
     return (
-        <div>
-            <h2 className='text-2xl font-bold mt-16 mb-16 text-primary text-center'>Select Your Favourite Category</h2>
+        <div className='text-center'>
+            <h2 className='text-2xl font-bold mt-16 mb-16 text-primary text-center'>Choose From Your Favourite Category</h2>
+
+            <button className='btn btn-primary text-white mb-8' onClick={getAllCategories}>Show All Categories</button>
+
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 md:gap-1 gap-6'>
                 {
-                    categories.map((category) => <Category
-                        key={category._id}
+                    categories.map((category, i) => <Category
+                        key={i}
                         category={category}>
                     </Category>)
                 }

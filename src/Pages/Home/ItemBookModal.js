@@ -31,7 +31,7 @@ const ItemBookModal = ({ advertiseItem, setAdvertiseItem }) => {
         }
 
         /* send bookingInfo data to server to create a new collection */
-        fetch('https://simora-motors-server.vercel.app/bookings', {
+        fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
