@@ -53,7 +53,7 @@ const CategoryProduct = ({ product, setReportedItem, setAvailableProduct, bookin
                         htmlFor="report-modal" className="btn btn-primary hover:bg-secondary text-white"
                         onClick={() => setReportedItem(product)}
                     >
-                        Report Now
+                        Report To Admin
                     </label>
 
                 </div>
