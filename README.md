@@ -7,6 +7,7 @@
 * This is a fullstack project with combination of Client side, Server side and Database.
 * This site has JWT, Admin, Seller and Buyer Verification process to protect data.
 * MongoDB's CRUD Operation and Agreegation has been used in this project.
+* React Query and Axios has been used to fetch data from server.
 * Stripe has been used as payment processing method.
 * Environment Variable has been used to hide credentials.
 * Here a user can create either a seller or a buyer account. If a user login or register with google he will be considered as buyer.
@@ -24,7 +25,7 @@
 
 adminEmail: <test@gmail.com>
 
-adminPassword: iMg6NS8%xTNq
+adminPassword: <iMg6NS8%xTNq>
 
 
 sellerEmail: <romel@gmail.com>
