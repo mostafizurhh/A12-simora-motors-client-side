@@ -20,7 +20,6 @@ const CategoryDetails = () => {
                         key={i}
                         product={product}
                         setAvailableProduct={setAvailableProduct}
-                    // booking={booking}
                     >
                     </CategoryProduct>)
                 }

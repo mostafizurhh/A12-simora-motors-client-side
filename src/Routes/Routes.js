@@ -20,6 +20,7 @@ import MyProducts from '../layout/DashBoard/MyProducts';
 import SellerRoute from './SellerRoute';
 import AddAProduct from '../layout/DashBoard/AddAProduct';
 import MyBuyers from '../layout/DashBoard/MyBuyers';
+import ReportedItems from '../layout/DashBoard/ReportedItems';
 
 
 export const router = createBrowserRouter([
@@ -86,6 +87,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/allSellers',
                 element: <AdminRoute><AllSellers></AllSellers></AdminRoute>
+            },
+            {
+                path: '/dashboard/reporttoadmin',
+                element: <AdminRoute><ReportedItems></ReportedItems></AdminRoute>
             },
             {
                 path: '/dashboard/myProducts',
