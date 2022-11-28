@@ -7,7 +7,7 @@ import Spinner from '../../Pages/Shared/Spinner/Spinner';
 const AllBuyers = () => {
     const { data: buyers = [], isLoading, refetch } = useQuery({
         queryKey: ['buyers'],
-        queryFn: () => fetch('http://localhost:5000/users/buyer', {
+        queryFn: () => fetch('https://simora-motors-server-mostafizurhh.vercel.app/users/buyer', {
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
             }
@@ -19,7 +19,7 @@ const AllBuyers = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete?')
         if (proceed) {
-            fetch(`http://localhost:5000/users/${id}`, {
+            fetch(`https://simora-motors-server-mostafizurhh.vercel.app/users/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -35,7 +35,7 @@ const AllBuyers = () => {
 
     /* update user verification status */
     const handleVerify = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://simora-motors-server-mostafizurhh.vercel.app/users/admin/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())

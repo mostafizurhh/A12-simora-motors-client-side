@@ -95,7 +95,7 @@ const Register = () => {
     /* request server side to create an API */
     const saveUserInfo = (userName, email, userCategory, photoURL) => {
         const dbUser = { name: userName, email, userCategory, photoURL };
-        fetch('http://localhost:5000/users', {
+        fetch('https://simora-motors-server-mostafizurhh.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
