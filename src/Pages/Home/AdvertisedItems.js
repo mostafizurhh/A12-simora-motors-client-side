@@ -1,10 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import AdvertisedItem from './AdvertisedItem';
 import Spinner from '../Shared/Spinner/Spinner';
-import { useContext, useState, useEffect } from 'react';
+import { useState } from 'react';
 import ItemBookModal from './ItemBookModal';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../Contexts/AuthContext/AuthProvider';
 
 
 const AdvertisedItems = () => {
@@ -25,7 +24,7 @@ const AdvertisedItems = () => {
         return <Spinner></Spinner>
     }
 
-    if (advertisedItems.length > 0) {
+    if (advertisedItems.saleStatus === 'Available') {
         return (
             <div className='text-center'>
                 <h2 className='text-2xl font-bold mt-16 text-primary text-center'>Advertised items</h2>
