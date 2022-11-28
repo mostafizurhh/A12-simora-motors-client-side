@@ -19,13 +19,13 @@
 * User Navigation and conditional rendering has been used here.
 * There is private routes and pages which can not be seen until you login/register.
 * AuthContexts has been used.
-* Tailwind, DaisyUI, React Query, React photo view, React-hot-toast, React-Router-Dom, React Icons are some of the technology components/libraries that has been used in this project
+* Tailwind, DaisyUI, React photo view, React-hot-toast, React-Router-Dom, React Icons are some of the technology components/libraries that has been used in this project
 
 
 
 adminEmail: <test@gmail.com>
 
-adminPassword: <iMg6NS8%xTNq>
+adminPassword: iMg6NS8%xTNq
 
 
 sellerEmail: <romel@gmail.com>
