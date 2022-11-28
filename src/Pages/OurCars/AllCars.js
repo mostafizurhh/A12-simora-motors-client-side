@@ -11,7 +11,7 @@ const AllCars = ({ allcars, setAllAdvertiseItem }) => {
 
     const { data: users = [] } = useQuery({
         queryKey: ['users'],
-        queryFn: () => fetch('https://simora-motors-server.vercel.app/users/')
+        queryFn: () => fetch('http://localhost:5000/users/')
             .then(res => res.json())
     })
 
@@ -36,16 +36,19 @@ const AllCars = ({ allcars, setAllAdvertiseItem }) => {
                     </div>
 
                     <div className='flex items-center'>
-                        {seller}
                         <div className='avatar'>
-                            <div className='w-5, h-10 rounded-full mx-2'>
+                            <div className='w-5, h-10 rounded-full mr-2'>
                                 <img src={photoURL} alt="" />
                             </div>
                         </div>
                         <>
                             {users?.status !== 'verified' && <FaRegCheckCircle className='bg-blue-600 rounded-full mr-2'></FaRegCheckCircle>}
                         </>
-                        {location}
+
+                        <div className='ml-2'>
+                            <p className='text-start'>{seller}</p>
+                            <p>{location}</p>
+                        </div>
                     </div>
                     <div className='flex text-sm'>
                         {phone}

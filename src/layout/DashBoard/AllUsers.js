@@ -8,7 +8,7 @@ const AllUsers = () => {
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('https://simora-motors-server.vercel.app/users');
+            const res = await fetch('http://localhost:5000/users');
             const data = await res.json();
             return data;
         }
@@ -19,7 +19,7 @@ const AllUsers = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete?')
         if (proceed) {
-            fetch(`https://simora-motors-server.vercel.app/users/${id}`, {
+            fetch(`http://localhost:5000/users/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -35,7 +35,7 @@ const AllUsers = () => {
 
     /* update userCategory */
     const handleUserCategory = id => {
-        fetch(`https://simora-motors-server.vercel.app/users/admin/${id}`, {
+        fetch(`http://localhost:5000/users/admin/${id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

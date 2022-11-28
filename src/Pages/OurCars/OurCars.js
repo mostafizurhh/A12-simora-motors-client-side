@@ -8,7 +8,7 @@ const OurCars = () => {
     const [allAdvertiseItem, setAllAdvertiseItem] = useState(null)
     const { data: alladvertisedItems = [], isLoading } = useQuery({
         queryKey: ['alladvertisedItems'],
-        queryFn: () => fetch('https://simora-motors-server.vercel.app/alladvertisedItems')
+        queryFn: () => fetch('http://localhost:5000/alladvertisedItems')
             .then(res => res.json())
     })
 
@@ -17,7 +17,7 @@ const OurCars = () => {
     }
 
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-8'>
             {
                 alladvertisedItems.map((allcars, i) => <AllCars
                     key={i}

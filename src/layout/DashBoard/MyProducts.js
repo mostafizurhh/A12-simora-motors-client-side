@@ -10,7 +10,7 @@ const MyProducts = () => {
     const { data: items = [], isLoading, refetch } = useQuery({
         queryKey: ['items'],
         queryFn: async () => {
-            const res = await fetch(`https://simora-motors-server.vercel.app/advertised?email=${user?.email}`, {
+            const res = await fetch(`http://localhost:5000/advertised?email=${user?.email}`, {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -26,7 +26,7 @@ const MyProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete?')
         if (proceed) {
-            fetch(`https://simora-motors-server.vercel.app/advertised/${id}`, {
+            fetch(`http://localhost:5000/advertised/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -42,7 +42,7 @@ const MyProducts = () => {
 
     /* update userCategory */
     // const handleUserCategory = id => {
-    //     fetch(`https://simora-motors-server.vercel.app/users/seller/${id}`, {
+    //     fetch(`http://localhost:5000/users/seller/${id}`, {
     //         method: 'PATCH'
     //     })
     //         .then(res => res.json())
