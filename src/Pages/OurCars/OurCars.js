@@ -19,7 +19,7 @@ const OurCars = () => {
 
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-8'>
+        <div className='grid grid-cols-1 gap-4 mt-8'>
             {
                 alladvertisedItems.map((allcars, i) => <AllCars
                     key={i}

@@ -26,7 +26,7 @@ const AdvertisedItems = () => {
     return (
         <div className='text-center'>
             <h2 className='text-2xl font-bold mt-16 text-primary text-center'>Advertised items</h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
                 {
                     advertisedItems.map((item, i) => <AdvertisedItem
                         key={i}
