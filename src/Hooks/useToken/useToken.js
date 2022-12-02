@@ -5,7 +5,7 @@ export const useToken = email => {
 
     useEffect(() => {
         if (email) {
-            fetch(`https://simora-motors-server-mostafizurhh.vercel.app/jwt?email=${email}`)
+            fetch(`https://simora-motors-server.vercel.app/jwt?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.accessToken) {

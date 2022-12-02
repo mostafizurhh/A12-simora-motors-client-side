@@ -15,7 +15,7 @@ const CheckOutForm = ({ booking }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("https://simora-motors-server-mostafizurhh.vercel.app/create-payment-intent", {
+        fetch("https://simora-motors-server.vercel.app/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const CheckOutForm = ({ booking }) => {
                 transactionId: paymentIntent.id
             }
 
-            fetch("https://simora-motors-server-mostafizurhh.vercel.app/userPayments", {
+            fetch("https://simora-motors-server.vercel.app/userPayments", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

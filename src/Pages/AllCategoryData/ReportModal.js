@@ -31,7 +31,7 @@ const ReportModal = ({ reportedItem, product, setReportedItem }) => {
         }
 
         /* send reportedItemInfo data to server to create a new collection */
-        fetch('https://simora-motors-server-mostafizurhh.vercel.app/reporteditems', {
+        fetch('https://simora-motors-server.vercel.app/reporteditems', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

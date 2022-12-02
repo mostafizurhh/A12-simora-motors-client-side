@@ -8,16 +8,16 @@ const AdvertisedItem = ({ item, setAdvertiseItem }) => {
 
     const { data: users = [] } = useQuery({
         queryKey: ['users'],
-        queryFn: () => fetch('https://simora-motors-server-mostafizurhh.vercel.app/users/')
+        queryFn: () => fetch('https://simora-motors-server.vercel.app/users/')
             .then(res => res.json())
     })
 
     if (saleStatus === 'Available') {
 
         return (
-            <div className="card lg:card-side bg-base-100 shadow-xl mb-8 mt-8">
+            <div className="card card-compact border bg-base-100 shadow-lg mb-8 mt-8">
                 <PhotoView src={image}>
-                    <figure><img src={image} alt="cars" className='h-full' /></figure>
+                    <figure><img src={image} alt="cars" className='h-96 w-full' /></figure>
                 </PhotoView>
                 <div className='flex-grow-1'>
                     <div className="card-body">

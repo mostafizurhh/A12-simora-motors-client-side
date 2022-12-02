@@ -6,7 +6,7 @@ export const useSeller = email => {
 
     useEffect(() => {
         if (email) {
-            fetch(`https://simora-motors-server-mostafizurhh.vercel.app/users/seller/${email}`)
+            fetch(`https://simora-motors-server.vercel.app/users/seller/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     // console.log(data)

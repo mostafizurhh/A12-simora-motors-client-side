@@ -31,7 +31,7 @@ const ItemBookModal = ({ advertiseItem, setAdvertiseItem }) => {
         }
 
         /* send bookingInfo data to server to create a new collection */
-        fetch('https://simora-motors-server-mostafizurhh.vercel.app/bookings', {
+        fetch('https://simora-motors-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,8 +41,14 @@ const ItemBookModal = ({ advertiseItem, setAdvertiseItem }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setAdvertiseItem(null)
-                toast.success('Your Booking Is Confirmed', { duration: 3000 });
+                if (data.acknowledged) {
+                    setAdvertiseItem(null)
+                    toast.success('Your Booking Is Confirmed', { duration: 3000 });
+                }
+                else {
+                    setAdvertiseItem(null)
+                    toast.error('You already booked this.', { duration: 3000 });
+                }
             })
     }
 

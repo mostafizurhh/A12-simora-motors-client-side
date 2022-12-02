@@ -3,18 +3,22 @@ import React from 'react';
 import { FaGasPump, FaRegCheckCircle } from 'react-icons/fa';
 import { PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import Spinner from '../Shared/Spinner/Spinner';
 
 
 const AllCars = ({ allcars, setAllAdvertiseItem, allAdvertiseItem }) => {
 
     const { name, image, resale, original, year, month, type, milage, seller, location, photoURL, phone, email, condition, posted } = allcars;
 
-    const { data: users = [] } = useQuery({
+    const { data: users = [], isLoading } = useQuery({
         queryKey: ['users'],
-        queryFn: () => fetch('https://simora-motors-server-mostafizurhh.vercel.app/users/')
+        queryFn: () => fetch('https://simora-motors-server.vercel.app/users/')
             .then(res => res.json())
     })
 
+    if (isLoading) {
+        return <Spinner></Spinner>
+    }
 
     if (allcars.saleStatus === 'Available') {
 

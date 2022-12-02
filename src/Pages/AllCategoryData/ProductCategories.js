@@ -6,7 +6,7 @@ const ProductCategories = () => {
     const [categories, setCategories] = useState([])
 
     const getAllCategories = () => {
-        axios.get('https://simora-motors-server-mostafizurhh.vercel.app/allcategories')
+        axios.get('https://simora-motors-server.vercel.app/allcategories')
             .then(res => {
                 // console.log(res.data)
                 setCategories(res.data)
