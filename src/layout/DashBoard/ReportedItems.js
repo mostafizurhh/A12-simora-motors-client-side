@@ -9,7 +9,7 @@ const ReportedItems = () => {
     const { data: reports = [], isLoading, refetch } = useQuery({
         queryKey: ['reports', user?.email],
         queryFn: async () => {
-            const res = await fetch(`https://simora-motors-server.vercel.app/reporteditems`);
+            const res = await fetch(`http://localhost:5000/reporteditems`);
             const data = await res.json();
             return data;
         }
@@ -19,7 +19,7 @@ const ReportedItems = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete?')
         if (proceed) {
-            fetch(`https://simora-motors-server.vercel.app/reporteditems/${id}`, {
+            fetch(`http://localhost:5000/reporteditems/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
