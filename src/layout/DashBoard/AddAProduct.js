@@ -10,7 +10,7 @@ const AddAProduct = () => {
     const { data: categories = [], } = useQuery({
         queryKey: ['categories'],
         queryFn: () =>
-            fetch('http://localhost:5000/allcategories')
+            fetch('https://simora-motors-server.vercel.app/allcategories')
                 .then(res => res.json())
     })
 
@@ -59,7 +59,7 @@ const AddAProduct = () => {
             posted: new Date()
         }
 
-        fetch('http://localhost:5000/advertised', {
+        fetch('https://simora-motors-server.vercel.app/advertised', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

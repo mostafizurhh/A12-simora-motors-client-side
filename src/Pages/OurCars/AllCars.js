@@ -12,7 +12,7 @@ const AllCars = ({ allcars, setAllAdvertiseItem, allAdvertiseItem }) => {
 
     const { data: users = [], isLoading } = useQuery({
         queryKey: ['users'],
-        queryFn: () => fetch('http://localhost:5000/users/')
+        queryFn: () => fetch('https://simora-motors-server.vercel.app/users/')
             .then(res => res.json())
     })
 
