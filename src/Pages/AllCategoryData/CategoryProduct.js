@@ -29,7 +29,7 @@ const CategoryProduct = ({ product, setReportedItem, setAvailableProduct, bookin
                         <p><strong>Posted:</strong> {posted}</p>
                     </div>
                     <div>
-                        <p className='font-extrabold'>Sale: ${resale}</p>
+                        <p className='font-extrabold animate-bounce'>Sale: ${resale}</p>
                         <p >Original: ${original}</p>
                     </div>
                 </div>
