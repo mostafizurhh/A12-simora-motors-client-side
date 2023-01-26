@@ -10,52 +10,42 @@ const CategoryProduct = ({ product, setReportedItem, setAvailableProduct, bookin
 
 
     return (
-        <div className="card lg:card-side bg-base-100 border shadow-xl mb-8 mt-8 ">
+        <div className="card border text-primary shadow-xl mb-8 mt-8 hover:bg-primary hover:text-white">
             <PhotoView src={image}>
-                <figure><img src={image} alt="cars" className='h-full' /></figure>
+                <figure><img src={image} alt="cars" className='h-[500px] w-full' /></figure>
             </PhotoView>
-            <div className='flex-grow-1'>
-                <div className="card-body">
-                    <div className="card-title">{name}</div>
-                    <div className='flex items-center'>
-                        <FaGasPump></FaGasPump>
-                        <p className='ml-2'>{type}</p>
-                    </div>
-                    <div className='flex text-sm'>
-                        <p>{month}</p>
-                        <p className='font-bold'>.</p>
-                        <p>{year}</p>
-                        <p className='font-bold'>.</p>
-                        <p>{milage} km</p>
-                    </div>
-                    <div className='flex text-sm'>
+
+            <div className="card-body">
+                <div className='flex justify-between'>
+                    <div>
+                        <h2 className="card-title">{name}</h2>
+                        <div className='flex items-center'>
+                            <FaGasPump></FaGasPump>
+                            <p className='ml-2'>{type}</p>
+                        </div>
+                        <p>{month} {year}, {milage} km</p>
+                        <p>{seller}</p>
                         <p>{location}</p>
-                        <p className='font-bold'>.</p>
-                        <p>{posted}</p>
+                        <p><strong>Posted:</strong> {posted}</p>
                     </div>
                     <div>
-                        <p>{seller}</p>
+                        <p className='font-extrabold'>Sale: ${resale}</p>
+                        <p >Original: ${original}</p>
                     </div>
                 </div>
-                <div className='card-body flex-row pt-0'>
-                    <p className='text-primary font-extrabold'>Sale: ${resale}</p>
-                    <p className='text-secondary'>Original: ${original}</p>
-                </div>
-                <div className="card-body py-2">
-
+                <div className='flex justify-between'>
                     <label
-                        htmlFor="booking-modal" className="btn btn-primary hover:bg-secondary text-white"
+                        htmlFor="booking-modal" className="btn btn-success btn-outline"
                         onClick={() => setAvailableProduct(product)}
                     >
                         Book Now
                     </label>
                     <label
-                        htmlFor="report-modal" className="btn btn-primary hover:bg-secondary text-white"
+                        htmlFor="report-modal" className="btn btn-success btn-outline"
                         onClick={() => setReportedItem(product)}
                     >
                         Report To Admin
                     </label>
-
                 </div>
             </div>
         </div>

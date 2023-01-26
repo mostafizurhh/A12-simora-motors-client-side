@@ -23,7 +23,7 @@ const AllCars = ({ allcars, setAllAdvertiseItem, allAdvertiseItem }) => {
     if (allcars.saleStatus === 'Available') {
 
         return (
-            <div className="bg-base-100 border shadow-xl mb-8 ">
+            <div className="bg-base-100 border text-primary shadow-xl mb-8 hover:bg-primary hover:text-white">
                 <div className="flex flex-col md:flex-row justify-between">
                     <div className='flex flex-col md:flex-row'>
                         <PhotoView src={image}>
@@ -64,7 +64,7 @@ const AllCars = ({ allcars, setAllAdvertiseItem, allAdvertiseItem }) => {
                                 {email}
                             </div>
                             <div className='flex-col text-sm'>
-                                <p className='text-start font-bold text-primary'> Condition: {condition}</p>
+                                <p className='text-start font-bold animate-pulse'> Condition: {condition}</p>
                                 <p className='text-start font-semibold'>Posted: {posted}</p>
                             </div>
                         </div>
@@ -72,13 +72,13 @@ const AllCars = ({ allcars, setAllAdvertiseItem, allAdvertiseItem }) => {
 
                     <div className='flex flex-col justify-between'>
                         <div className='flex md:flex-col justify-between p-3'>
-                            <p className='text-primary font-extrabold text-start'>Sale: ${resale}</p>
-                            <p className='text-secondary'>New: ${original}</p>
+                            <p className='font-extrabold text-start animate-bounce'>Sale: ${resale}</p>
+                            <p className=''>New: ${original}</p>
                         </div>
                         <div className="card-actions justify-end p-3">
                             <label
                                 htmlFor='bookModal'
-                                className="btn btn-primary hover:bg-secondary text-white"
+                                className="btn btn-success btn-outline"
                                 onClick={() => setAllAdvertiseItem(allcars)}
                             >
                                 Book Now

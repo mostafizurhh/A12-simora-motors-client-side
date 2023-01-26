@@ -17,7 +17,7 @@ const Contact = () => {
                 <div className='flex items-center mt-3'>
                     <FaClock className='mr-4'></FaClock>
                     <p className='text-start'>Opening Hours: <br />
-                        Monday-Friday (8-18)</p>
+                        Monday-Friday (8:00 - 18:00)</p>
                 </div>
                 <div className='flex items-center mt-3'>
                     <FaMapMarkerAlt className='mr-4'></FaMapMarkerAlt>

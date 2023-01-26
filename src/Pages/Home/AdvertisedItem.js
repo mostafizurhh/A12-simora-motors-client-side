@@ -8,7 +8,7 @@ const AdvertisedItem = ({ item, setAdvertiseItem }) => {
     if (saleStatus === 'Available') {
 
         return (
-            <div className="border flex flex-col rounded-lg bg-base-100 shadow-lg mb-8 mt-8 hover:bg-primary hover:text-white">
+            <div className="border flex flex-col rounded-lg text-primary shadow-lg mb-8 mt-8 hover:bg-primary hover:text-white">
                 <PhotoView src={image}>
                     <figure><img src={image} alt="Cars" style={{ height: 250, borderRadius: 30 }} className='p-4' /></figure>
                 </PhotoView>

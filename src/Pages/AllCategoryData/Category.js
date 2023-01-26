@@ -7,7 +7,7 @@ const Category = ({ category }) => {
     // console.log(category)
     const { _id, categoryName, photo, description } = category
     return (
-        <div className="card card-compact bg-base-100 border shadow-lg hover:bg-primary hover:text-white">
+        <div className="card card-compact bg-base-100 border shadow-lg text-primary hover:bg-primary hover:text-white">
             <PhotoView src={photo}>
                 <figure><img src={photo} alt="Shoes" style={{ height: 250, borderRadius: 30 }} className='w-full p-4' /></figure>
             </PhotoView>
