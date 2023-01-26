@@ -21,7 +21,7 @@ const ProductCategories = () => {
 
             <button className='btn btn-success btn-outline text-white mb-8' onClick={getAllCategories}>Show All Categories</button>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-16 md:gap-1 gap-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-6 md:gap-2 gap-6'>
                 {
                     categories.map((category, i) => <Category
                         key={i}
