@@ -2,6 +2,8 @@
 
 # Live Link: https://simora-motors-client.web.app/
 
+# Project Requirments: https://github.com/ProgrammingHero1/Used-products-resale-market-Assignment/blob/main/task_description.md
+
 ## About The Project
 
 * This is a fullstack project with combination of Client side, Server side and Database.
