@@ -12,7 +12,7 @@ const CategoryProduct = ({ product, setReportedItem, setAvailableProduct, bookin
     return (
         <div className="card border text-primary shadow-xl mb-8 mt-8 hover:bg-primary hover:text-white">
             <PhotoView src={image}>
-                <figure><img src={image} alt="cars" className='h-[500px] w-full' /></figure>
+                <figure><img src={image} alt="cars" className='h-[500px] w-full transition ease-in-out hover:-translate-y-1 hover:scale-90 hover:rounded-xl' /></figure>
             </PhotoView>
 
             <div className="card-body">

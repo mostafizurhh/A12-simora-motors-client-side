@@ -9,7 +9,7 @@ const Category = ({ category }) => {
     return (
         <div className="card card-compact bg-base-100 border shadow-lg text-primary hover:bg-primary hover:text-white">
             <PhotoView src={photo}>
-                <figure><img src={photo} alt="Shoes" style={{ height: 250, borderRadius: 30 }} className='w-full p-4' /></figure>
+                <figure><img src={photo} alt="" style={{ height: 250, borderRadius: 30 }} className='w-full p-4 transition ease-in-out hover:-translate-y-1 hover:scale-110' /></figure>
             </PhotoView>
             <div className="card-body">
                 <h2 className="card-title">{categoryName}</h2>

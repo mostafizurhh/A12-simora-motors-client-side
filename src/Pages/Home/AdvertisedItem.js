@@ -10,7 +10,7 @@ const AdvertisedItem = ({ item, setAdvertiseItem }) => {
         return (
             <div className="border flex flex-col rounded-lg text-primary shadow-lg mb-8 mt-8 hover:bg-primary hover:text-white">
                 <PhotoView src={image}>
-                    <figure><img src={image} alt="Cars" style={{ height: 250, borderRadius: 30 }} className='p-4' /></figure>
+                    <figure><img src={image} alt="Cars" style={{ height: 250, borderRadius: 30 }} className='p-4 transition ease-in-out hover:-translate-y-1 hover:scale-110' /></figure>
                 </PhotoView>
                 <div className='px-3'>
                     <div className="h-[20px] font-bold text-start">{name}</div>

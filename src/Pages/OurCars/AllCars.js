@@ -27,7 +27,7 @@ const AllCars = ({ allcars, setAllAdvertiseItem, allAdvertiseItem }) => {
                 <div className="flex flex-col md:flex-row justify-between">
                     <div className='flex flex-col md:flex-row'>
                         <PhotoView src={image}>
-                            <figure><img src={image} alt="Cars" style={{ height: 250, borderRadius: 30 }} className='w-96 p-4' /></figure>
+                            <figure><img src={image} alt="Cars" style={{ height: 250, borderRadius: 30 }} className='w-96 p-4 transition ease-in-out hover:-translate-y-1 hover:scale-90' /></figure>
                         </PhotoView>
 
                         <div className='p-3'>
